@@ -1,0 +1,9 @@
+
+
+fieldset.PrivateNotchedOutline-root-1.MuiOutlinedInput-notchedOutline{
+    border-radius: 32px;
+            display: "flex";
+            border: 1px solid rgba(131, 39, 41, 0.5);
+            box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
+            border-width: 2px;
+}
