@@ -26,33 +26,81 @@ body {
   display: none;
 }
 
+.Logo {
+  height: 30px;
+}
+
+@media screen and (max-width:500px) {
+  .Logo {
+    height: 15px;
+    margin-top: -10px;
+  }
+}
+
+.Top_heading {
+  color: #832729;
+  font-weight: bold
+}
+
+@media screen and (max-width:500px) {
+  .Top_heading {
+    font-size: 12px;
+  }
+}
+
 .content {
   display: flex;
+  justify-items: center;
   justify-content: space-evenly;
 }
 
-#label-filecomment-upload {
+@media screen and (max-width:500px) {
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width:765px) {
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+#label-fileComment-upload {
   border: 0.970966px solid rgba(131, 39, 41, 0.4);
-  border-radius: 5.84723px;
-  font-family: 'Nunito Sans';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 17.5417px;
   width: 30%;
-  display: flex;
-  float: left;
   height: 180px;
   box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
   border-radius: 6px;
   position: relative;
-  margin: 30px;
-  font-weight: bold;
-  margin-right: 20px;
+  outline: none;
+}
+
+@media screen and (max-width:500px) {
+  #label-fileComment-upload {
+    width: 100%;
+    margin: 10px;
+  }
+}
+
+@media screen and (max-width:765px) {
+  #label-fileComment-upload {
+    width: 100%;
+    margin: 10px;
+  }
 }
 
 #label-file-upload.drag-active {
   background-color: #b92121;
 }
+
+
 
 .upload-button {
   cursor: pointer;
@@ -69,7 +117,6 @@ body {
 
 #drag-file-element {
   position: absolute;
-
   top: 0px;
   right: 0px;
   bottom: 0px;
@@ -137,12 +184,7 @@ body {
 }
 
 .top_header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  justify-content: center;
-  align-items: center;
-  position: sticky;
+  background-color: #F0e9e9;
 }
 
 .left {
@@ -158,16 +200,6 @@ body {
   width: 253px;
 
 }
-
-/* .main {
-     
- width: 100%;
-    background: #f7f5f5;
-    display: flex;
-      flex-direction: column;
-      font-family: sans-serif;
-  } */
-
 
 fieldset.PrivateNotchedOutline-root-1.MuiOutlinedInput-notchedOutline {
   border-radius: 32px;
@@ -243,14 +275,12 @@ fieldset.PrivateNotchedOutline-root-1.MuiOutlinedInput-notchedOutline {
   justify-content: center;
 }
 
-.formdisplay {
-  background: rgba(255, 255, 255, 0.4);
-  box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.06);
+.formDisplay {
   border-radius: 18px;
-  margin: 20px;
-  padding: 20px;
-  width: auto;
+  padding: 15px;
   height: auto;
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 .oneline {
@@ -278,7 +308,6 @@ fieldset.PrivateNotchedOutline-root-1.MuiOutlinedInput-notchedOutline {
 }
 
 .submitbutton {
-
   width: 125px;
   height: 47px;
   padding: 9.74539px 23.3889px;
@@ -320,8 +349,6 @@ td {
 
 .deletebutton {
   border: 1px solid #C1B2B1;
-  font-family: 'Nunito Sans';
-  font-style: normal;
   font-weight: 600;
 }
 
@@ -339,12 +366,7 @@ td {
   margin-right: 15px;
 }
 
-.dropbox {
-  width: 50%;
-  display: flex;
-  float: left;
-  height: 150px;
-}
+
 
 /* The sidebar menu */
 .sideBar {
@@ -365,7 +387,6 @@ td {
   overflow-x: hidden;
   margin-left: 250px;
   margin-top: 10px;
-  /* Same as the width of the sidebar */
   padding: 0px 10px;
   display: flex;
   flex-direction: column;
@@ -384,63 +405,76 @@ td {
   }
 }
 
-.reprotlast {
-  bottom: 0;
+.reportLast {
   position: fixed;
-  padding: 20px;
+  bottom: 0;
 }
 
-.uploadbox {
-  position: relative;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  min-width: 322px;
-  max-width: 508px;
-  height: 48px;
-  border: dashed 0.970966px rgba(131, 39, 41, 0.4);
-  padding: 8px 16px 8px 8px;
-  border-radius: 5px;
-  cursor: pointer;
-  -webkit-box-flex: 0;
-  -webkit-flex-grow: 0;
-  -ms-flex-positive: 0;
-  flex-grow: 0;
-  border: 0.970966px solid rgba(131, 39, 41, 0.4);
-  border-radius: 5.84723px;
-  font-family: 'Nunito Sans';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 17.5417px;
-  width: 50%;
-  display: flex;
-  margin: 20px;
-  float: right;
-  height: 150px;
-  box-shadow: 0px 0px 12px rgb(0 0 0 / 10%);
-  border-radius: 6px;
+.ReportButton {
+  width: 250%;
+  margin-left: 30%;
+  margin-bottom: 30%;
+  padding: 10px;
+  border: 1.5px solid #424244;
+}
+
+@media screen and (max-width:501px) {
+  .ReportButton {
+    display: none;
+  }
 }
 
 .btn {
-  padding: 15px;
   background-color: #832729;
   color: white;
   font-weight: bold;
   border-radius: 10px;
   border: none;
   cursor: pointer;
-  height: 58px;
   border-radius: 8px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
 }
 
 .btn:hover {
   background-color: #945c5c;
+}
+
+
+@media screen and (max-width:464px) {
+  .SideBarInput {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-right: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+.DragImage {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-width: 2px;
+  border-radius: 10px;
+  border-style: dashed;
+  background-color: #fafafa;
+  color: black;
+  outline: none;
+  float: left;
+  height: 180px;
+  width: 30%;
+  transition: border 0.24s ease-in-out;
+}
+
+@media screen and (max-width:500px) {
+  .DragImage {
+    width: 100%;
+    margin: 10px;
+  }
+}
+
+@media screen and (max-width:765px) {
+  .DragImage {
+    width: 100%;
+    margin: 10px;
+  }
 }

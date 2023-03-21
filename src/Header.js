@@ -4,11 +4,21 @@ import tanshiq from "./tanishq.svg";
 
 export default function Header() {
   return (
-    <div className="top_header">
-      <img src={tanshiq} alt="tanishqLogo" height="30px" className="mx-5" />
-      <div className="left my-3" style={{ color: "#832729" }}>
-        <h4>TANISHQ BOTTOMUP FEEDBACK FORM</h4>
-      </div>
-    </div>
+    // <div className="top_header">
+    //   <div>
+    //     <img src={tanshiq} alt="tanishqLogo" className="Logo" />
+    //   </div>
+    //   <div className="Top_heading mx-3">TANISHQ BOTTOMUP FEEDBACK FORM</div>
+    // </div>
+    <>
+      <nav className="navbar top_header">
+        <div className="container-fluid">
+          <span className="navbar-brand mb-0 h1">
+            <img src={tanshiq} alt="tanishqLogo" className="Logo" />
+          </span>
+          <div className="Top_heading mx-3">TANISHQ BOTTOMUP FEEDBACK FORM</div>
+        </div>
+      </nav>
+    </>
   );
 }

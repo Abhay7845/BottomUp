@@ -17,7 +17,7 @@ export default function FirstPage(props) {
         <Header />
       </div>
       <div className="sideBar">
-        <div className="e-input">
+        <div className="SideBarInput">
           <TextField
             variant="filled"
             className="inputRounded"
@@ -49,25 +49,20 @@ export default function FirstPage(props) {
             required
           />
         </div>
-        <div className="reprotlast">
-          <hr />
+        <div className="reportLast">
+          <hr style={{ width: "300%", marginLeft: "8px" }} />
           <button
-            style={{
-              backgroundColor: "#F0E9E9",
-              width: "199.59px",
-              height: "45px",
-            }}
+            className="ReportButton"
             onClick={(e) => {
               e.preventDefault();
               window.location.href =
                 "https://d1whtlypfis84e.cloudfront.net/guides/wp-content/uploads/2018/10/29232033/report.jpg";
             }}
           >
-            Report
+            REPORT
           </button>
         </div>
       </div>
-
       <div className="main">
         <Content btqId={btqId} region={region} rsoName={rsoName} />
       </div>

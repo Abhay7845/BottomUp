@@ -240,7 +240,7 @@ export default function Content(props) {
 
   return (
     <>
-      <form className="formdisplay">
+      <form className="formDisplay">
         <div style={{ padding: 20 }} className="grid-container">
           <Grid>
             <SelectOfMUI
@@ -314,7 +314,7 @@ export default function Content(props) {
         <div className="content">
           <input
             name="concept"
-            id="label-filecomment-upload"
+            id="label-fileComment-upload"
             type="text"
             placeholder="Concept please explain in detail(max 100 characters)"
             onChange={(e) => {
@@ -325,7 +325,7 @@ export default function Content(props) {
           />
           <DropBox btqId="MAM_01" />
         </div>
-        <div className="d-flex justify-content-between mx-5">
+        <div className="d-flex justify-content-between my-3 mx-5">
           <Button
             variant="contained"
             style={{ backgroundColor: "#832729", color: "#ffff" }}
@@ -335,7 +335,11 @@ export default function Content(props) {
           </Button>
           <Button
             variant="contained"
-            style={{ backgroundColor: "#832729", color: "#ffff" }}
+            style={{
+              backgroundColor: "#832729",
+              color: "#ffff",
+              marginLeft: "10px",
+            }}
             onClick={handleReset}
           >
             RESET
