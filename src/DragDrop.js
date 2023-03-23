@@ -34,13 +34,13 @@ function DropBox(props, { onDrop }) {
     <>
       <div {...getRootProps()} className="DragImage">
         <input {...getInputProps()} />
-        <p>Drag some Image </p>
+        <p>Drag/Select Image </p>
         <Button
           variant="contained"
           style={{ backgroundColor: "#832729", color: "#ffff" }}
           onClick={open}
         >
-          Select file
+          file
         </Button>
       </div>
       <aside>

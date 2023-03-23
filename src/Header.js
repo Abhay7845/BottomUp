@@ -16,7 +16,9 @@ export default function Header() {
           <span className="navbar-brand mb-0 h1">
             <img src={tanshiq} alt="tanishqLogo" className="Logo" />
           </span>
-          <div className="Top_heading mx-3">TANISHQ BOTTOMUP FEEDBACK FORM</div>
+          <div className="Top_heading mx-3">
+            TANISHQ BOTTOM-UP FEEDBACK FORM
+          </div>
         </div>
       </nav>
     </>
