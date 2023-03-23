@@ -26,10 +26,9 @@ export default function Login() {
       callback: handleCallbackResponse,
       auto_select: false,
     });
-    google.accounts.id.renderButton(
-      document.getElementById("signInDiv"),
-      { width: "250" } // customization attributes
-    );
+    google.accounts.id.renderButton(document.getElementById("signInDiv"), {
+      width: "250",
+    });
   }, []);
 
   useEffect(() => {
@@ -50,6 +49,7 @@ export default function Login() {
   }, [user.email]);
   console.log("checkMail==>", checkMail);
   console.log("availableCount==>", availableCount);
+
   return (
     <>
       {!checkMail ? (

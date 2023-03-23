@@ -3,14 +3,11 @@ import "./App.css";
 import axios from "axios";
 import { Grid, Button } from "@material-ui/core";
 import { SelectOfMUI, TextFieldOfMUI } from "./component/ComponentFroAdmin";
-import { nanoid } from "nanoid";
 import ReadOnlyRow from "./ReadOnlyRow";
 import DropBox from "./DragDrop";
 
 export default function Content(props) {
-  const btqId = props.btqId;
-  const region = props.region;
-  const rsoName = props.rsoName;
+  const { btqId, region, rsoName } = props;
   const [contacts, setContacts] = useState([]);
   const [selectedCollection, setSelectedCollection] = useState("");
   const [getNeedState, setGetNeedState] = useState([]);
@@ -23,7 +20,7 @@ export default function Content(props) {
   const [catPB, setCatPB] = useState("");
   const [lengthSize, setLengthSize] = useState("");
   const [reqWeight, setReqWeight] = useState("");
-  const [range, setRange] = useState(" ");
+  const [range, setRange] = useState("");
   const [concept, setConcept] = useState("");
 
   const [addFormData, setAddFormData] = useState({
@@ -39,6 +36,13 @@ export default function Content(props) {
   });
   const collection_options = ["core24"];
   const date = new Date();
+
+  const id = Math.floor(Math.random() * 9999 + 1000);
+  const id2 = Math.random().toString(30).substring(2, 7);
+  const id3 = Math.floor(Math.random() * 99 + 1000);
+  const id4 = Math.random().toString(36).substring(2, 7);
+  console.log("id==>", `NAT10${id}${id2}${id3}${id4}`);
+
   // NEED STATE API -1
   useEffect(() => {
     axios
@@ -165,7 +169,7 @@ export default function Content(props) {
     }
     e.preventDefault();
     const newContact = {
-      id: nanoid(),
+      id: `NAT100${id}${id2}${id3}${id4}`,
       date,
       btqId,
       region,
@@ -179,10 +183,12 @@ export default function Content(props) {
       RequiredWeight: addFormData.RequiredWeight,
       range: range,
       concept: addFormData.concept,
+      image: "image url",
     };
     const newContacts = [...contacts, newContact];
     setContacts(newContacts);
-    console.log("contacts==>", newContacts);
+    console.log("newContacts==>", newContacts);
+    console.log("contacts==>", contacts);
     handleReset();
   };
 
@@ -211,7 +217,7 @@ export default function Content(props) {
 
   const lastSubmit = () => {
     const newContact = {
-      id: nanoid(),
+      id: `NAT100${id}${id2}${id3}${id4}`,
       date,
       btqId,
       region,
@@ -227,7 +233,6 @@ export default function Content(props) {
       concept: addFormData.concept,
     };
 
-    console.log("newContact==>", [newContact]);
     const config = {
       method: "POST",
       url: "https://tanishqdigitalnpim.titan.in:8443/bottomUp/BottomUp/item/details/submit",
@@ -258,7 +263,7 @@ export default function Content(props) {
               optionList={getNeedState}
               selectHandleChange={handleAndNeedStateFormChange}
               value={needState}
-              name="getneedState"
+              name="getNeedState"
               required="required"
             />
           </Grid>
@@ -346,32 +351,34 @@ export default function Content(props) {
           </Button>
         </div>
       </form>
-      <table>
-        <thead>
-          <tr>
-            <th>Collection</th>
-            <th>Need State</th>
-            <th>Group</th>
-            <th>Category</th>
-            <th>CatPB</th>
-            <th>DesiredLength</th>
-            <th>RequiredWeight</th>
-            <th>Range</th>
-            <th>Concept</th>
-            <th>Images File</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          {contacts.map((contact, i) => (
-            <ReadOnlyRow
-              contact={contact}
-              key={i}
-              handleDeleteClick={handleDeleteClick}
-            />
-          ))}
-        </tbody>
-      </table>
+      <div className="table table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th>Collection</th>
+              <th>Need State</th>
+              <th>Group</th>
+              <th>Category</th>
+              <th>CatPB</th>
+              <th>DesiredLength</th>
+              <th>RequiredWeight</th>
+              <th>Range</th>
+              <th>Concept</th>
+              <th>Images File</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {contacts.map((contact, i) => (
+              <ReadOnlyRow
+                contact={contact}
+                key={i}
+                handleDeleteClick={handleDeleteClick}
+              />
+            ))}
+          </tbody>
+        </table>
+      </div>
       <div className="d-flex justify-content-end my-3 mx-3">
         <Button
           variant="contained"
