@@ -22,6 +22,7 @@ export default function Content(props) {
   const [reqWeight, setReqWeight] = useState("");
   const [range, setRange] = useState("");
   const [concept, setConcept] = useState("");
+  console.log("props==>", props);
 
   const [addFormData, setAddFormData] = useState({
     Collection: "",
@@ -41,7 +42,6 @@ export default function Content(props) {
   const id2 = Math.random().toString(30).substring(2, 7);
   const id3 = Math.floor(Math.random() * 99 + 1000);
   const id4 = Math.random().toString(36).substring(2, 7);
-  console.log("id==>", `NAT10${id}${id2}${id3}${id4}`);
 
   // NEED STATE API -1
   useEffect(() => {
@@ -164,7 +164,7 @@ export default function Content(props) {
 
   const handleAddFormSubmit = (e) => {
     if (rsoName === "") {
-      alert("RsoName cannot be empty");
+      alert("Rso Name is Required");
       return;
     }
     e.preventDefault();
@@ -264,7 +264,6 @@ export default function Content(props) {
               selectHandleChange={handleAndNeedStateFormChange}
               value={needState}
               name="getNeedState"
-              required="required"
             />
           </Grid>
           <Grid>
@@ -352,7 +351,7 @@ export default function Content(props) {
         </div>
       </form>
       <div className="table table-responsive">
-        <table>
+        <table className="table table-bordered">
           <thead>
             <tr>
               <th>Collection</th>

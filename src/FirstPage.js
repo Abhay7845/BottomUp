@@ -5,12 +5,12 @@ import "./App.css";
 import { TextField } from "@material-ui/core";
 
 export default function FirstPage(props) {
+  const { btqId, region } = props;
   const [rsoName, setRsoName] = useState("");
   function handlerName(e) {
     setRsoName(e.target.value);
   }
-  const btqId = props.btqId;
-  const region = props.region;
+
   return (
     <div className="App">
       <div className="header">
@@ -26,7 +26,7 @@ export default function FirstPage(props) {
               left: "10px",
             }}
             label="BTQ ID"
-            value={props.btqId}
+            value={btqId}
           />
           <TextField
             variant="filled"
@@ -35,7 +35,7 @@ export default function FirstPage(props) {
               left: "10px",
             }}
             label="REGION"
-            value={props.region}
+            value={region}
           />
           <TextField
             variant="filled"
