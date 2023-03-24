@@ -1,6 +1,6 @@
 import { FormControl, MenuItem, TextField } from "@material-ui/core";
 import React from "react";
-import "./index.css";
+import "../Style/App.css";
 
 function TextFieldOfMUI(props) {
   const { label, type, textFieldHandlerChange, value, name } = props;

@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import "./App.css";
+import "../Style/App.css";
 import axios from "axios";
 import { Grid, Button } from "@material-ui/core";
-import { SelectOfMUI, TextFieldOfMUI } from "./component/ComponentFroAdmin";
+import { SelectOfMUI, TextFieldOfMUI } from "./ComponentFroAdmin";
 import ReadOnlyRow from "./ReadOnlyRow";
 import DropBox from "./DragDrop";
 import moment from "moment";
+import { alphabet } from "../Data/DataList";
 
 export default function Content(props) {
   const { btqId, region, rsoName } = props;
@@ -85,34 +86,7 @@ export default function Content(props) {
   }, [category, group, needState, selectedCollection]);
 
   // GET DESIRED LENGTH API-5
-  const alphabet = [
-    "A",
-    "B",
-    "C",
-    "D",
-    "E",
-    "F",
-    "G",
-    "H",
-    "I",
-    "J",
-    "K",
-    "L",
-    "M",
-    "N",
-    "O",
-    "P",
-    "Q",
-    "R",
-    "S",
-    "T",
-    "U",
-    "V",
-    "W",
-    "x",
-    "Y",
-    "Z",
-  ];
+
   function addChange(e) {
     setRange(range);
     const name = e.target.name;

@@ -1,7 +1,7 @@
 import Content from "./Content";
 import Header from "./Header";
 import React, { useState } from "react";
-import "./App.css";
+import "../Style/App.css";
 import { TextField } from "@material-ui/core";
 
 export default function FirstPage(props) {

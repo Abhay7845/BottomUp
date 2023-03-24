@@ -1,6 +1,6 @@
 import React from "react";
-import "./App.css";
-import Login from "./GoogleLogin";
+import "./Style/App.css";
+import Login from "./Components/GoogleLogin";
 function App() {
   return (
     <>

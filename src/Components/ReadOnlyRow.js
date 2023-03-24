@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.css";
+import "../Style/App.css";
 import * as Icon from "react-bootstrap-icons";
 import { Button } from "@material-ui/core";
 
