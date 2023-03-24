@@ -22,7 +22,9 @@ function TextFieldOfMUI(props) {
 }
 
 const SelectOfMUI = (props) => {
-  const { optionList, selectHandleChange, value, name, placeholder } = props;
+  const { optionList, selectHandleChange, value, name, placeholder, required } =
+    props;
+  console.log("required==>", required);
 
   return (
     <>

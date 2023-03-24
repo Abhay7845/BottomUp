@@ -5,6 +5,7 @@ import { Grid, Button } from "@material-ui/core";
 import { SelectOfMUI, TextFieldOfMUI } from "./component/ComponentFroAdmin";
 import ReadOnlyRow from "./ReadOnlyRow";
 import DropBox from "./DragDrop";
+import moment from "moment";
 
 export default function Content(props) {
   const { btqId, region, rsoName } = props;
@@ -36,10 +37,8 @@ export default function Content(props) {
     concept: "",
   });
   const collection_options = ["core24"];
-  const date = new Date();
-
+  const date = moment().format("DD/MM/YYYY");
   const id1 = Math.random().toString(36).substring(2, 4);
-  console.log("UniqueId==>", `${btqId}2400${id1}`);
 
   // NEED STATE API -1
   useEffect(() => {
