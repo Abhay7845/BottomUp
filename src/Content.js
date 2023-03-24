@@ -22,7 +22,7 @@ export default function Content(props) {
   const [reqWeight, setReqWeight] = useState("");
   const [range, setRange] = useState("");
   const [concept, setConcept] = useState("");
-  console.log("props==>", props);
+  const [counter, setCounter] = useState(1);
 
   const [addFormData, setAddFormData] = useState({
     Collection: "",
@@ -38,10 +38,8 @@ export default function Content(props) {
   const collection_options = ["core24"];
   const date = new Date();
 
-  const id = Math.floor(Math.random() * 9999 + 1000);
-  const id2 = Math.random().toString(30).substring(2, 7);
-  const id3 = Math.floor(Math.random() * 99 + 1000);
-  const id4 = Math.random().toString(36).substring(2, 7);
+  const id1 = Math.random().toString(36).substring(2, 4);
+  console.log("UniqueId==>", `${btqId}2400${id1}`);
 
   // NEED STATE API -1
   useEffect(() => {
@@ -144,7 +142,7 @@ export default function Content(props) {
     addChange(e);
   };
 
-  const handleCatpbChange = (e) => {
+  const handleCatPBChange = (e) => {
     setCatPB(e.target.value);
     addChange(e);
   };
@@ -167,9 +165,10 @@ export default function Content(props) {
       alert("Rso Name is Required");
       return;
     }
-    e.preventDefault();
+    const incrementCounter = () => setCounter(counter + 1);
+    incrementCounter();
     const newContact = {
-      id: `NAT100${id}${id2}${id3}${id4}`,
+      id: `${btqId}2400${id1}${counter}`,
       date,
       btqId,
       region,
@@ -195,6 +194,7 @@ export default function Content(props) {
   const handleDeleteClick = (contactId) => {
     const newContacts = [...contacts];
     const index = contacts.findIndex((contact) => contact.id === contactId);
+    console.log("index==>", index);
     newContacts.splice(index, 1);
     setContacts(newContacts);
   };
@@ -217,7 +217,7 @@ export default function Content(props) {
 
   const lastSubmit = () => {
     const newContact = {
-      id: `NAT100${id}${id2}${id3}${id4}`,
+      id: ``,
       date,
       btqId,
       region,
@@ -288,7 +288,7 @@ export default function Content(props) {
             <SelectOfMUI
               placeholder="CatPB"
               optionList={getCatPB}
-              selectHandleChange={handleCatpbChange}
+              selectHandleChange={handleCatPBChange}
               value={catPB}
               name="CatPB"
             />

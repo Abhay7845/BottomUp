@@ -23,7 +23,7 @@ function TextFieldOfMUI(props) {
 
 const SelectOfMUI = (props) => {
   const { optionList, selectHandleChange, value, name, placeholder } = props;
-  console.log("optionList==>", optionList);
+
   return (
     <>
       <FormControl fullWidth variant="outlined">

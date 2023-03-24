@@ -6,18 +6,16 @@ import jwt_decode from "jwt-decode";
 
 export default function Login() {
   const [user, setUser] = useState("");
-  const [checkMail, setCheckMail] = useState(true);
+  const [checkMail, setCheckMail] = useState();
   const [btqId, setBtqId] = useState("");
   const [region, setRegion] = useState("");
   const [availableCount, setAvailableCount] = useState("");
 
   function handleCallbackResponse(response) {
     var userObject = jwt_decode(response.credential);
-    console.log("userObject==>", userObject);
     setUser(userObject);
   }
   console.log("user==>", user);
-  console.log("email==>", user.email);
   console.log("google==>", google.accounts);
   useEffect(() => {
     google.accounts.id.initialize({
@@ -37,22 +35,18 @@ export default function Login() {
         `https://tanishqdigitalnpim.titan.in:8443/bottomUp/BottomUp//getRegion/${user.email}`
       )
       .then((response) => {
-        console.log("response==>", response.data.status);
+        console.log("response==>", response.data);
         setBtqId(response.data.value.btqCode);
         setRegion(response.data.value.region);
         setAvailableCount(response.data.value.availableCount);
-        if (response.data.status === false) {
-          setCheckMail(false);
-        }
+        setCheckMail(response.data.status);
       })
       .catch((error) => console.log("error=>", error));
   }, [user.email]);
-  console.log("checkMail==>", checkMail);
   console.log("availableCount==>", availableCount);
-
   return (
     <>
-      {!checkMail ? (
+      {checkMail === true ? (
         <FirstPage btqId={btqId} region={region} />
       ) : (
         <>
