@@ -26,16 +26,7 @@ body {
   display: none;
 }
 
-.Logo {
-  height: 30px;
-}
 
-@media screen and (max-width:500px) {
-  .Logo {
-    height: 15px;
-    margin-top: -10px;
-  }
-}
 
 .Top_heading {
   color: #832729;
@@ -438,6 +429,9 @@ td {
   background-color: #945c5c;
 }
 
+.SideBarInput {
+  padding-left: 13px;
+}
 
 @media screen and (max-width:464px) {
   .SideBarInput {

@@ -18,32 +18,16 @@ export default function FirstPage(props) {
       </div>
       <div className="sideBar">
         <div className="SideBarInput">
+          <TextField variant="filled" label="BTQ ID" value={btqId} />
           <TextField
             variant="filled"
-            className="inputRounded"
-            style={{
-              padding: "5px",
-              left: "10px",
-            }}
-            label="BTQ ID"
-            value={btqId}
-          />
-          <TextField
-            variant="filled"
-            style={{
-              padding: "5px",
-              left: "10px",
-            }}
             label="REGION"
             value={region}
+            className="my-2"
           />
           <TextField
             variant="filled"
-            style={{
-              padding: "5px",
-              left: "10px",
-            }}
-            label="RSOName"
+            label="RSO Name"
             value={rsoName}
             onChange={handlerName}
             required

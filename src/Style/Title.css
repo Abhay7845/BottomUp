@@ -9,8 +9,6 @@
   color: #fff;
 }
 
-
-
 .dropdown {
   position: relative;
 }
@@ -51,4 +49,15 @@
   width: 400px;
   margin-top: 70px;
   padding-bottom: 40px;
+}
+
+.Logo {
+  height: 30px;
+}
+
+@media screen and (max-width:500px) {
+  .Logo {
+    height: 15px;
+    margin-top: -10px;
+  }
 }
