@@ -160,9 +160,9 @@ export default function Content(props) {
     setRange(`${x}-${y}`);
   };
 
-  const handleAddFormSubmit = (e) => {
+  const handleAddFormSubmit = () => {
     if (rsoName === "") {
-      alert("Rso Name is Required");
+      alert("RSO Name is Required");
       return;
     }
     const incrementCounter = () => setCounter(counter + 1);
@@ -186,15 +186,12 @@ export default function Content(props) {
     };
     const newContacts = [...contacts, newContact];
     setContacts(newContacts);
-    console.log("newContacts==>", newContacts);
-    console.log("contacts==>", contacts);
     handleReset();
   };
 
   const handleDeleteClick = (contactId) => {
     const newContacts = [...contacts];
     const index = contacts.findIndex((contact) => contact.id === contactId);
-    console.log("index==>", index);
     newContacts.splice(index, 1);
     setContacts(newContacts);
   };
@@ -217,7 +214,7 @@ export default function Content(props) {
 
   const lastSubmit = () => {
     const newContact = {
-      id: ``,
+      id: `${btqId}2400${id1}${counter}`,
       date,
       btqId,
       region,
@@ -232,7 +229,7 @@ export default function Content(props) {
       range: range,
       concept: addFormData.concept,
     };
-
+    console.log("newContact==>", newContact);
     const config = {
       method: "POST",
       url: "https://tanishqdigitalnpim.titan.in:8443/bottomUp/BottomUp/item/details/submit",
