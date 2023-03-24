@@ -16,6 +16,7 @@ export default function Login() {
     setUser(userObject);
   }
   console.log("user==>", user);
+  console.log("email==>", user.email);
   console.log("google==>", google.accounts);
   useEffect(() => {
     google.accounts.id.initialize({
@@ -43,24 +44,24 @@ export default function Login() {
       })
       .catch((error) => console.log("error=>", error));
   }, [user.email]);
+
   console.log("availableCount==>", availableCount);
+
   return (
     <>
       {checkMail === true ? (
         <FirstPage btqId={btqId} region={region} />
       ) : (
-        <>
-          <center>
-            <header className="LoginPage shadow">
-              <br />
-              <h2>Welcome to Bottom UP</h2>
-              <br />
-              <br />
-              <h4 className="my-3">Continue with Your Email</h4>
-              <button id="signInDiv" />
-            </header>
-          </center>
-        </>
+        <center>
+          <header className="LoginPage shadow">
+            <br />
+            <h2>Welcome to Bottom UP</h2>
+            <br />
+            <br />
+            <h4 className="my-3">Continue with Your Email</h4>
+            <button id="signInDiv" className="LoginButton" />
+          </header>
+        </center>
       )}
     </>
   );
