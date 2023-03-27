@@ -38,7 +38,7 @@ export default function Content(props) {
     concept: "",
   });
   const collection_options = ["core24"];
-  const date = moment().format("DD/MM/YYYY");
+  const date = moment().format("YYYY-MM-DD");
   const id1 = Math.random().toString(36).substring(2, 4);
 
   // NEED STATE API -1
@@ -136,6 +136,27 @@ export default function Content(props) {
   const handleAddFormSubmit = () => {
     if (rsoName === "") {
       alert("RSO Name is Required");
+      return;
+    } else if (addFormData.Collection === "") {
+      alert("Collection is Required");
+      return;
+    } else if (addFormData.getNeedState === "") {
+      alert("NeedState is Required");
+      return;
+    } else if (addFormData.group === "") {
+      alert("Group is Required");
+      return;
+    } else if (addFormData.Category === "") {
+      alert("Category is Required");
+      return;
+    } else if (addFormData.CatPB === "") {
+      alert("CatPB is Required");
+      return;
+    } else if (addFormData.DesiredLength === "") {
+      alert("Desired Length is Required");
+      return;
+    } else if (addFormData.concept === "") {
+      alert("Concent is Required");
       return;
     }
     const incrementCounter = () => setCounter(counter + 1);

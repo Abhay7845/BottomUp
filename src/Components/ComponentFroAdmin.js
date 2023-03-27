@@ -1,9 +1,10 @@
-import { FormControl, MenuItem, TextField } from "@material-ui/core";
 import React from "react";
+import { FormControl, MenuItem, TextField } from "@material-ui/core";
 import "../Style/App.css";
 
 function TextFieldOfMUI(props) {
   const { label, type, textFieldHandlerChange, value, name } = props;
+
   return (
     <>
       <TextField
@@ -22,9 +23,14 @@ function TextFieldOfMUI(props) {
 }
 
 const SelectOfMUI = (props) => {
-  const { optionList, selectHandleChange, value, name, placeholder, required } =
-    props;
-  console.log("required==>", required);
+  const {
+    optionList,
+    selectHandleChange,
+    value,
+    name,
+    placeholder,
+    handleChange,
+  } = props;
 
   return (
     <>
@@ -35,6 +41,7 @@ const SelectOfMUI = (props) => {
           onChange={selectHandleChange}
           name={name}
           variant="outlined"
+          onSelect={handleChange}
           select
         >
           {optionList.map((element) => {
