@@ -11,3 +11,18 @@ fieldset.PrivateNotchedOutline-root-1.MuiOutlinedInput-notchedOutline {
     border: none;
     background-color: #ffff;
 }
+
+.mainContainer {
+    border: 2px solid red;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.fromStyle {
+    border: 2px solid green;
+    padding: 20px;
+}
