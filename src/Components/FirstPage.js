@@ -30,7 +30,6 @@ export default function FirstPage(props) {
             label="RSO Name"
             value={rsoName}
             onChange={handlerName}
-            required
           />
         </div>
         <div className="reportLast">

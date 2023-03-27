@@ -133,7 +133,7 @@ export default function Content(props) {
     setRange(`${x}-${y}`);
   };
 
-  const handleAddFormSubmit = () => {
+  const handleAddFormSubmit = (e) => {
     if (rsoName === "") {
       alert("RSO Name is Required");
       return;
@@ -161,6 +161,7 @@ export default function Content(props) {
     }
     const incrementCounter = () => setCounter(counter + 1);
     incrementCounter();
+    e.preventDefault();
     const newContact = {
       id: `${btqId}2400${id1}${counter}`,
       date,
@@ -180,7 +181,6 @@ export default function Content(props) {
     };
     const newContacts = [...contacts, newContact];
     setContacts(newContacts);
-    handleReset();
   };
 
   const handleDeleteClick = (contactId) => {
@@ -188,22 +188,6 @@ export default function Content(props) {
     const index = contacts.findIndex((contact) => contact.id === contactId);
     newContacts.splice(index, 1);
     setContacts(newContacts);
-  };
-
-  const handleReset = () => {
-    setSelectedCollection("");
-    setGetNeedState([]);
-    setNeedState("");
-    setGetGroup([]);
-    setGroup("");
-    setGetCategory([]);
-    setCategory("");
-    setGetCatPB([]);
-    setCatPB("");
-    setLengthSize("");
-    setReqWeight("");
-    setRange("");
-    setConcept("");
   };
 
   const lastSubmit = () => {
@@ -245,7 +229,6 @@ export default function Content(props) {
               value={selectedCollection}
               selectHandleChange={handleAddFormChange}
               name="Collection"
-              required="required"
             />
           </Grid>
           <Grid>
@@ -320,24 +303,13 @@ export default function Content(props) {
           />
           <DropBox btqId="MAM_01" />
         </div>
-        <div className="d-flex justify-content-between my-3 mx-5">
+        <div className="d-flex justify-content-end my-3 mx-5">
           <Button
             variant="contained"
             style={{ backgroundColor: "#832729", color: "#ffff" }}
             onClick={handleAddFormSubmit}
           >
             SUBMIT
-          </Button>
-          <Button
-            variant="contained"
-            style={{
-              backgroundColor: "#832729",
-              color: "#ffff",
-              marginLeft: "10px",
-            }}
-            onClick={handleReset}
-          >
-            RESET
           </Button>
         </div>
       </form>

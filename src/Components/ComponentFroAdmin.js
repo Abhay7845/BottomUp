@@ -16,7 +16,6 @@ function TextFieldOfMUI(props) {
         onChange={textFieldHandlerChange}
         value={value}
         name={name}
-        required
       />
     </>
   );
