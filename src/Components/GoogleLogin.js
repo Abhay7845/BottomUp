@@ -1,17 +1,16 @@
 /*global google*/
 import React, { useState, useEffect } from "react";
-import FirstPage from "./FirstPage";
 import axios from "axios";
 import jwt_decode from "jwt-decode";
 import "../Style/index.css";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   const [user, setUser] = useState("");
-  const [checkMail, setCheckMail] = useState();
-  const [btqId, setBtqId] = useState("");
-  const [region, setRegion] = useState("");
+  // const [btqId, setBtqId] = useState("");
+  // const [region, setRegion] = useState("");
   const [availableCount, setAvailableCount] = useState("");
-
+  const navigate = useNavigate();
   function handleCallbackResponse(response) {
     var userObject = jwt_decode(response.credential);
     setUser(userObject);
@@ -38,32 +37,30 @@ export default function Login() {
       )
       .then((response) => {
         console.log("response==>", response.data);
-        setBtqId(response.data.value.btqCode);
-        setRegion(response.data.value.region);
         setAvailableCount(response.data.value.availableCount);
-        setCheckMail(response.data.status);
+        localStorage.setItem("btqId", response.data.value.btqCode);
+        localStorage.setItem("region", response.data.value.region);
+        if (response.data.status === true) {
+          navigate("/bottom/up/feedback/form");
+        }
       })
       .catch((error) => console.log("error=>", error));
-  }, [user.email]);
+  }, [user.email, navigate]);
 
   console.log("availableCount==>", availableCount);
 
   return (
     <>
-      {checkMail === true ? (
-        <FirstPage btqId={btqId} region={region} />
-      ) : (
-        <center>
-          <header className="LoginPage shadow">
-            <br />
-            <h2>Welcome to Bottom UP</h2>
-            <br />
-            <br />
-            <h4 className="my-3">Continue with Your Email</h4>
-            <button id="signInDiv" className="LoginButton" />
-          </header>
-        </center>
-      )}
+      <center>
+        <header className="LoginPage shadow">
+          <br />
+          <h2>Welcome to Bottom UP</h2>
+          <br />
+          <br />
+          <h4 className="my-3">Continue with Your Email</h4>
+          <button id="signInDiv" className="LoginButton" />
+        </header>
+      </center>
     </>
   );
 }

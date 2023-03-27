@@ -4,13 +4,13 @@ import React, { useState } from "react";
 import "../Style/App.css";
 import { TextField } from "@material-ui/core";
 
-export default function FirstPage(props) {
-  const { btqId, region } = props;
+export default function FirstPage() {
   const [rsoName, setRsoName] = useState("");
   function handlerName(e) {
     setRsoName(e.target.value);
   }
-
+  const btqId = localStorage.getItem("btqId");
+  const region = localStorage.getItem("region");
   return (
     <div className="App">
       <div className="header">
