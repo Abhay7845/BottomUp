@@ -245,7 +245,7 @@ export default function Content(props) {
   return (
     <>
       <form className="formDisplay">
-        <div style={{ padding: 20 }} className="grid-container">
+        <div className="grid-container">
           <Grid>
             <SelectOfMUI
               placeholder="Collection"
@@ -328,25 +328,25 @@ export default function Content(props) {
           />
           <DropBox btqId="MAM_01" />
         </div>
-        <div className="d-flex justify-content-end my-3 mx-5">
-          <Button
-            variant="contained"
-            style={{
-              backgroundColor: "#832729",
-              color: "#ffff",
-            }}
-            onClick={handleAddFormSubmit}
-          >
-            SUBMIT
-          </Button>
-        </div>
+        <Button
+          variant="contained"
+          style={{
+            backgroundColor: "#832729",
+            color: "#ffff",
+            float: "right",
+            marginTop: "2%",
+          }}
+          onClick={handleAddFormSubmit}
+        >
+          SUBMIT
+        </Button>
       </form>
       <div className="table table-responsive">
         <table className="table table-bordered">
           <thead>
             <tr>
               <th>Collection</th>
-              <th>Need State</th>
+              <th>NeedState</th>
               <th>Group</th>
               <th>Category</th>
               <th>CatPB</th>
@@ -354,7 +354,7 @@ export default function Content(props) {
               <th>RequiredWeight</th>
               <th>Range</th>
               <th>Concept</th>
-              <th>Images File</th>
+              <th>Image</th>
               <th>Action</th>
             </tr>
           </thead>

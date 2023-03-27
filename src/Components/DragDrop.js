@@ -44,10 +44,10 @@ function DropBox(props, { onDrop }) {
           file
         </Button>
       </div>
-      <aside>
+      <div>
         <p>{lists}</p>
         <ul>{fileRejectionItems}</ul>
-      </aside>
+      </div>
     </>
   );
 }
