@@ -27,6 +27,7 @@ export default function Content(props) {
   const [counter, setCounter] = useState(1);
 
   const [addFormData, setAddFormData] = useState({
+    rsoName: "",
     Collection: "",
     getNeedState: "",
     group: "",
@@ -94,37 +95,30 @@ export default function Content(props) {
     newFormData[name] = e.target.value;
     setAddFormData(newFormData);
   }
-
   const handleAddFormChange = (e) => {
     setSelectedCollection(e.target.value);
     addChange(e);
   };
-
   const handleAndNeedStateFormChange = (e) => {
     setNeedState(e.target.value);
     addChange(e);
   };
-
   const handleGroupChange = (e) => {
     setGroup(e.target.value);
     addChange(e);
   };
-
   const handleCategoryChange = (e) => {
     setCategory(e.target.value);
     addChange(e);
   };
-
   const handleCatPBChange = (e) => {
     setCatPB(e.target.value);
     addChange(e);
   };
-
   const handleDesiredLength = (e) => {
     setLengthSize(e.target.value);
     addChange(e);
   };
-
   const handleWeight = (e) => {
     setReqWeight(e.target.value);
     addChange(e);
@@ -132,7 +126,33 @@ export default function Content(props) {
     const x = y - 5;
     setRange(`${x}-${y}`);
   };
-
+  const handleReset = () => {
+    addFormData.rsoName = "";
+    addFormData.Collection = "";
+    addFormData.getNeedState = "";
+    addFormData.group = "";
+    addFormData.Category = "";
+    addFormData.CatPB = "";
+    addFormData.DesiredLength = "";
+    addFormData.RequiredWeight = "";
+    addFormData.range = "";
+    addFormData.concept = "";
+  };
+  const handleResetFiled = () => {
+    setSelectedCollection("");
+    setGetNeedState([]);
+    setNeedState("");
+    setGetGroup([]);
+    setGroup("");
+    setGetCategory([]);
+    setCategory("");
+    setGetCatPB([]);
+    setCatPB("");
+    setLengthSize("");
+    setReqWeight("");
+    setRange("");
+    setConcept("");
+  };
   const handleAddFormSubmit = (e) => {
     if (rsoName === "") {
       alert("RSO Name is Required");
@@ -155,13 +175,15 @@ export default function Content(props) {
     } else if (addFormData.DesiredLength === "") {
       alert("Desired Length is Required");
       return;
+    } else if (addFormData.RequiredWeight === "") {
+      alert("Desired Length is Required");
+      return;
     } else if (addFormData.concept === "") {
       alert("Concent is Required");
       return;
     }
     const incrementCounter = () => setCounter(counter + 1);
     incrementCounter();
-    e.preventDefault();
     const newContact = {
       id: `${btqId}2400${id1}${counter}`,
       date,
@@ -181,6 +203,8 @@ export default function Content(props) {
     };
     const newContacts = [...contacts, newContact];
     setContacts(newContacts);
+    handleReset();
+    handleResetFiled();
   };
 
   const handleDeleteClick = (contactId) => {
@@ -229,6 +253,7 @@ export default function Content(props) {
               value={selectedCollection}
               selectHandleChange={handleAddFormChange}
               name="Collection"
+              required="required"
             />
           </Grid>
           <Grid>
@@ -306,7 +331,10 @@ export default function Content(props) {
         <div className="d-flex justify-content-end my-3 mx-5">
           <Button
             variant="contained"
-            style={{ backgroundColor: "#832729", color: "#ffff" }}
+            style={{
+              backgroundColor: "#832729",
+              color: "#ffff",
+            }}
             onClick={handleAddFormSubmit}
           >
             SUBMIT
