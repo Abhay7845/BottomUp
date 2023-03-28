@@ -346,7 +346,10 @@ export default function Content(props) {
         </Button>
       </form>
       <div className="table table-responsive">
-        <table className="table table-bordered">
+        <table
+          className="table table-bordered"
+          style={{ border: "1px solid black" }}
+        >
           <thead>
             <tr>
               <th>Collection</th>
