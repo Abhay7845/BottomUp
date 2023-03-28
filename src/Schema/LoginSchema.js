@@ -2,13 +2,16 @@
 import * as yup from "yup";
 
 export const LoginInitialValue = {
-  username: "",
+  email: "",
   password: "",
   rsoName: "",
 };
 
 export const LoginSchema = yup.object({
-  username: yup.string().required("Username is required"),
+  email: yup
+    .string()
+    .required("Email is required")
+    .matches(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g, "Enter valid Email"),
   password: yup
     .string()
     .required("Password is required")

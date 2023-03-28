@@ -1,31 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 @media screen and (max-width: 800px) {
     .RegisterLeftStyle {
         display: none;
     }
 }
 
-.RegisterLeftStyle {
-    background-image: url("../Asset/Img/LoginBg.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: #e4fdfd;
-    height: 100vh;
-    z-index: -1;
-}
 
 .RegisterLeftRight {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
-    width: 100vw;
+    background-image: url("../Asset/Img/LoginBg.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1;
+}
+
+.Form_style {
+    padding: 20px;
+    width: 30%;
+    background-color: #ffff;
+    border-radius: 1px;
+}
+
+@media screen and (max-width:980px) {
+    .Form_style {
+        width: 50%;
+
+    }
+}
+
+@media screen and (max-width:574px) {
+    .Form_style {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width:450px) {
+    .Form_style {
+        width: 90%;
+    }
 }
 
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
 .GInput {
     width: 100%;
@@ -50,6 +73,7 @@
     border: none;
     background-color: #a46566;
     color: #ffff;
+    border-radius: 1px;
 }
 
 .CButton:hover {

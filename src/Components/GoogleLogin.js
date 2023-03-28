@@ -3,12 +3,12 @@ import React, { useState } from "react";
 import axios from "axios";
 import "../Style/Login.css";
 // import jwt_decode from "jwt-decode";
-import { FaLock } from "react-icons/fa";
 import "../Style/index.css";
 import { useNavigate } from "react-router-dom";
 import { Field, Form, Formik } from "formik";
 import { LoginInitialValue, LoginSchema } from "../Schema/LoginSchema";
 import ShowError from "../Schema/ShowError";
+import image from "../Asset/Img/Tanishq_Logo1.png";
 
 export default function Login() {
   const [availableCount, setAvailableCount] = useState("");
@@ -33,11 +33,11 @@ export default function Login() {
   // }, []);
 
   const onLogin = (payload) => {
-    const { username, password, rsoName } = payload;
-    console.log(username, password, rsoName);
+    const { email, password, rsoName } = payload;
+    console.log(email, password, rsoName);
     axios
       .get(
-        `https://tanishqdigitalnpim.titan.in:8443/bottomUp/BottomUp//getRegion/`
+        `https://tanishqdigitalnpim.titan.in:8443/bottomUp/BottomUp//getRegion/${email}`
       )
       .then((response) => {
         setLoading(true);
@@ -47,6 +47,9 @@ export default function Login() {
         localStorage.setItem("region", response.data.value.region);
         if (response.data.status === true) {
           navigate("/bottom/up/feedback/form");
+        }
+        if (response.data.status === false) {
+          alert("Email is not Registered");
         }
         setLoading(false);
       })
@@ -70,12 +73,11 @@ export default function Login() {
           <button id="signInDiv" className="LoginButton" />
         </header>
       </center> */}
-      <div className="row mx-0">
-        <div className="col RegisterLeftStyle"></div>
-        <div className="col RegisterLeftRight">
-          <div className="text-center my-4" style={{ color: "#832729" }}>
-            <FaLock size={30} />
-            <h4>BOTTOM UP LOGIN</h4>
+      {/* <div className="col RegisterLeftStyle"></div> */}
+      <div className="col RegisterLeftRight">
+        <div className="Form_style">
+          <div className="text-center" style={{ color: "#832729" }}>
+            <img src={image} alt="tanishq" height="60" width="70" />
           </div>
           <Formik
             initialValues={LoginInitialValue}
@@ -83,16 +85,12 @@ export default function Login() {
             onSubmit={(payload) => onLogin(payload)}
           >
             <Form>
-              <div className="my-2">
+              <div className="my-1">
                 <b>
                   Username <span className="text-danger"> *</span>
                 </b>
-                <Field
-                  placeholder="Username"
-                  name="username"
-                  className="GInput"
-                />
-                <ShowError name="username" />
+                <Field placeholder="Email" name="email" className="GInput" />
+                <ShowError name="email" />
               </div>
               <div className="my-2">
                 <b>
