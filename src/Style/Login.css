@@ -67,14 +67,15 @@
 }
 
 .CButton {
-    padding: 5px;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding: 7.5px;
+    padding-left: 20px;
+    padding-right: 20px;
     font-size: large;
     border: none;
     background-color: #a54648;
     color: #ffff;
-    border-radius: 1px;
+    border-radius: 3px;
+    font-size: 14px;
 }
 
 .CButton:hover {

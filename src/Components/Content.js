@@ -377,7 +377,7 @@ export default function Content(props) {
         </table>
       </div>
       <div className="d-flex justify-content-end mx-2">
-        <button type="submit" className="CButton" onClick={lastSubmit}>
+        <button type="submit" className="CButton shadow" onClick={lastSubmit}>
           {loading ? (
             <span
               className="spinner-border spinner-border-sm"
