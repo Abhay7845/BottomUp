@@ -33,6 +33,7 @@ export default function Login() {
   // }, []);
 
   const onLogin = (payload) => {
+    setLoading(true);
     const { email, password, rsoName } = payload;
     console.log(email, password, rsoName);
     axios
@@ -40,7 +41,6 @@ export default function Login() {
         `https://tanishqdigitalnpim.titan.in:8443/bottomUp/BottomUp//getRegion/${email}`
       )
       .then((response) => {
-        setLoading(true);
         console.log("response==>", response.data);
         setAvailableCount(response.data.value.availableCount);
         localStorage.setItem("btqId", response.data.value.btqCode);
