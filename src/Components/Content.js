@@ -25,6 +25,7 @@ export default function Content(props) {
   const [range, setRange] = useState("");
   const [concept, setConcept] = useState("");
   const [counter, setCounter] = useState(1);
+  const [loading, setLoading] = useState(false);
 
   const [addFormData, setAddFormData] = useState({
     rsoName: "",
@@ -215,6 +216,7 @@ export default function Content(props) {
   };
 
   const lastSubmit = () => {
+    setLoading(true);
     const newContact = {
       id: `${btqId}2400${id1}${counter}`,
       date,
@@ -239,7 +241,9 @@ export default function Content(props) {
     };
     axios(config)
       .then((response) => response)
+      .then((result) => console.log("result==>", result))
       .catch((error) => console.log("error==>", error));
+    setLoading(false);
   };
 
   return (
@@ -369,15 +373,20 @@ export default function Content(props) {
           </tbody>
         </table>
       </div>
-      <div className="d-flex justify-content-end my-3 mx-3">
-        <Button
-          variant="contained"
-          style={{ backgroundColor: "#832729", color: "#ffff" }}
-          onClick={lastSubmit}
-        >
-          SUBMIT
-        </Button>
+      <div className="d-flex justify-content-end mx-2">
+        <button type="submit" className="CButton" onClick={lastSubmit}>
+          {loading ? (
+            <span
+              className="spinner-border spinner-border-sm"
+              role="status"
+              aria-hidden="true"
+            />
+          ) : (
+            <span className="sr-only">SUBMIT</span>
+          )}
+        </button>
       </div>
+      <br />
     </>
   );
 }
