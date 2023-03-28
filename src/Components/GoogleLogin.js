@@ -71,13 +71,11 @@ export default function Login() {
         </header>
       </center> */}
       <div className="row mx-0">
-        <div className="col RegisterLeftStyle">
-          <h5 className="text-center my-5 text-info">LOGIN WITH US</h5>
-        </div>
+        <div className="col RegisterLeftStyle"></div>
         <div className="col RegisterLeftRight">
-          <div className="text-center text-info my-4">
+          <div className="text-center my-4" style={{ color: "#832729" }}>
             <FaLock size={30} />
-            <h4>LOGIN</h4>
+            <h4>BOTTOM UP LOGIN</h4>
           </div>
           <Formik
             initialValues={LoginInitialValue}
@@ -126,7 +124,7 @@ export default function Login() {
                     type="checkbox"
                     onClick={togglePassword}
                   />
-                  <span className="text-info">Show Password</span>
+                  <span style={{ color: "#832729" }}>Show Password</span>
                 </div>
                 <button type="submit" className="CButton">
                   {loading ? (
@@ -142,7 +140,6 @@ export default function Login() {
               </div>
             </Form>
           </Formik>
-          <hr className="mx-4" />
         </div>
       </div>
     </>
