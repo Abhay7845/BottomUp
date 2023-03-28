@@ -9,13 +9,12 @@ import { Field, Form, Formik } from "formik";
 import { LoginInitialValue, LoginSchema } from "../Schema/LoginSchema";
 import ShowError from "../Schema/ShowError";
 import image from "../Asset/Img/Tanishq_Logo1.png";
+import { FaRegEyeSlash, FaRegEye } from "react-icons/fa";
 
 export default function Login(props) {
-  const [availableCount, setAvailableCount] = useState("");
   const [passwordShown, setPasswordShown] = useState(false);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  console.log("props==>", props);
   // function handleCallbackResponse(response) {
   //   var userObject = jwt_decode(response.credential);
   //   setUser(userObject);
@@ -41,8 +40,6 @@ export default function Login(props) {
         `https://tanishqdigitalnpim.titan.in:8443/bottomUp/BottomUp//getRegion/${email}`
       )
       .then((response) => {
-        console.log("response==>", response.data);
-        setAvailableCount(response.data.value.availableCount);
         localStorage.setItem("btqId", response.data.value.btqCode);
         localStorage.setItem("region", response.data.value.region);
         if (response.data.status === true) {
@@ -56,8 +53,6 @@ export default function Login(props) {
       })
       .catch((error) => console.log("error=>", error));
   };
-
-  console.log("availableCount==>", availableCount);
 
   const togglePassword = () => {
     setPasswordShown(!passwordShown);
@@ -74,7 +69,6 @@ export default function Login(props) {
           <button id="signInDiv" className="LoginButton" />
         </header>
       </center> */}
-      {/* <div className="col RegisterLeftStyle"></div> */}
       <div className="col RegisterLeftRight">
         <div className="Form_style">
           <div className="text-center" style={{ color: "#832729" }}>
@@ -97,12 +91,31 @@ export default function Login(props) {
                 <b>
                   Password <span className="text-danger"> *</span>
                 </b>
-                <Field
-                  type={passwordShown ? "text" : "password"}
-                  placeholder="Password"
-                  className="GInput"
-                  name="password"
-                />
+                <div className="d-flex ">
+                  <Field
+                    type={passwordShown ? "text" : "password"}
+                    placeholder="Password"
+                    className="GInput"
+                    name="password"
+                  />
+                  <span className="border-bottom">
+                    {passwordShown ? (
+                      <FaRegEye
+                        size={20}
+                        cursor="pointer"
+                        onClick={togglePassword}
+                        style={{ marginTop: 15 }}
+                      />
+                    ) : (
+                      <FaRegEyeSlash
+                        size={20}
+                        cursor="pointer"
+                        onClick={togglePassword}
+                        style={{ marginTop: 15 }}
+                      />
+                    )}
+                  </span>
+                </div>
                 <ShowError name="password" />
               </div>
               <div className="my-2">
@@ -116,15 +129,7 @@ export default function Login(props) {
                 />
                 <ShowError name="rsoName" />
               </div>
-              <div className="d-flex justify-content-between mx-2">
-                <div className="form-check">
-                  <input
-                    className="form-check-input"
-                    type="checkbox"
-                    onClick={togglePassword}
-                  />
-                  <span style={{ color: "#832729" }}>Show Password</span>
-                </div>
+              <div className="d-flex justify-content-end">
                 <button type="submit" className="CButton">
                   {loading ? (
                     <span
