@@ -1,22 +1,27 @@
 import React from "react";
 
-const Alert = () => {
+const Alert = (props) => {
+  const capital = (word) => {
+    if (word === "danger") {
+      word = "Sorry";
+    } else if (word === "success") {
+      word = "Congratulations";
+    }
+    const lower = word.toLowerCase();
+    return lower.charAt(0).toUpperCase() + lower.slice(1);
+  };
   return (
-    <>
-      <div
-        className="alert alert-warning alert-dismissible fade show"
-        role="alert"
-      >
-        <strong>Holy guacamole!</strong> You should check in on some of those
-        fields below.
-        <button
-          type="button"
-          className="btn-close"
-          data-bs-dismiss="alert"
-          aria-label="Close"
-        />
-      </div>
-    </>
+    <div className="alertStyle">
+      {props.alert && (
+        <div
+          className={`alert alert-${props.alert.type} fade show`}
+          role="alert"
+        >
+          <strong>{capital(props.alert.type)}! </strong>
+          {props.alert.msg}
+        </div>
+      )}
+    </div>
   );
 };
 

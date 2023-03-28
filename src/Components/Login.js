@@ -10,12 +10,12 @@ import { LoginInitialValue, LoginSchema } from "../Schema/LoginSchema";
 import ShowError from "../Schema/ShowError";
 import image from "../Asset/Img/Tanishq_Logo1.png";
 
-export default function Login() {
+export default function Login(props) {
   const [availableCount, setAvailableCount] = useState("");
   const [passwordShown, setPasswordShown] = useState(false);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-
+  console.log("props==>", props);
   // function handleCallbackResponse(response) {
   //   var userObject = jwt_decode(response.credential);
   //   setUser(userObject);
@@ -47,9 +47,10 @@ export default function Login() {
         localStorage.setItem("region", response.data.value.region);
         if (response.data.status === true) {
           navigate("/bottom/up/feedback/form");
+          props.showAlert("Logged in Successfully", "success");
         }
         if (response.data.status === false) {
-          alert("Email is not Registered");
+          props.showAlert("Email is not Registered", "danger");
         }
         setLoading(false);
       })
