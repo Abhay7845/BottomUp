@@ -225,6 +225,7 @@ export default function Content(props) {
 
   const lastSubmit = () => {
     setLoading(true);
+    console.log("loading1==>", loading);
     const config = {
       method: "POST",
       url: "https://tanishqdigitalnpim.titan.in:8443/bottomUp/BottomUp/item/details/submit",
@@ -235,6 +236,7 @@ export default function Content(props) {
       .then((result) => console.log("result==>", result))
       .catch((error) => console.log("error==>", error));
     setLoading(false);
+    console.log("loading2==>", loading);
   };
 
   return (
@@ -368,7 +370,13 @@ export default function Content(props) {
         </table>
       </div>
       <div className="d-flex justify-content-end mx-2">
-        <button type="submit" className="CButton shadow" onClick={lastSubmit}>
+        <button
+          type="submit"
+          className={`btn btn-danger ${
+            contacts.length === 0 ? "disabled" : ""
+          }`}
+          onClick={lastSubmit}
+        >
           {loading ? (
             <span
               className="spinner-border spinner-border-sm"
