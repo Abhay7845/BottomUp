@@ -4,7 +4,8 @@ import React, { useState } from "react";
 import "../Style/App.css";
 import { TextField } from "@material-ui/core";
 
-export default function FirstPage() {
+export default function FirstPage(props) {
+  const { showAlert } = props;
   const [rsoName, setRsoName] = useState("");
   function handlerName(e) {
     setRsoName(e.target.value);
@@ -47,7 +48,12 @@ export default function FirstPage() {
         </div>
       </div>
       <div className="main">
-        <Content btqId={btqId} region={region} rsoName={rsoName} />
+        <Content
+          btqId={btqId}
+          region={region}
+          rsoName={rsoName}
+          showAlert={showAlert}
+        />
       </div>
     </div>
   );

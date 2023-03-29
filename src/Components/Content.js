@@ -9,7 +9,7 @@ import moment from "moment";
 import { alphabet } from "../Data/DataList";
 
 export default function Content(props) {
-  const { btqId, region, rsoName } = props;
+  const { btqId, region, rsoName, showAlert } = props;
   const [contacts, setContacts] = useState([]);
   const [selectedCollection, setSelectedCollection] = useState("");
   const [getNeedState, setGetNeedState] = useState([]);
@@ -232,7 +232,12 @@ export default function Content(props) {
     };
     axios(config)
       .then((response) => response)
-      .then((result) => console.log("result==>", result))
+      .then((result) => {
+        if (result.data.Code === "1000") {
+          console.log("response==>", result);
+          showAlert("Your Data has been Saved Successfully!", "success");
+        }
+      })
       .catch((error) => console.log("error==>", error));
     setLoading(false);
   };

@@ -26,7 +26,10 @@ const App = () => {
             path="/bottom/up/login"
             element={<Login showAlert={showAlert} />}
           />
-          <Route path="/bottom/up/feedback/form" element={<FirstPage />} />
+          <Route
+            path="/bottom/up/feedback/form"
+            element={<FirstPage showAlert={showAlert} />}
+          />
         </Routes>
       </BrowserRouter>
     </>
