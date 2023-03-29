@@ -7,16 +7,16 @@ const ReadOnlyRow = ({ contact, handleDeleteClick, i }) => {
   console.log("contact=>", contact);
   return (
     <tr key={i}>
-      <td>{contact.Collection}</td>
-      <td>{contact.getNeedState}</td>
+      <td>{contact.collection}</td>
+      <td>{contact.needState}</td>
       <td>{contact.group}</td>
-      <td>{contact.Category}</td>
-      <td>{contact.CatPB}</td>
-      <td>{contact.DesiredLength}</td>
-      <td>{contact.RequiredWeight}</td>
+      <td>{contact.category}</td>
+      <td>{contact.catPB}</td>
+      <td>{contact.lengthSize}</td>
+      <td>{contact.reqWeight}</td>
       <td>{contact.range}</td>
       <td>{contact.concept}</td>
-      <td>{contact.ImageFile}</td>
+      <td>{contact.url}</td>
       <td>
         <Button
           type="button"

@@ -43,6 +43,8 @@ export default function Content(props) {
   const date = moment().format("YYYY-MM-DD");
   const id1 = Math.random().toString(36).substring(2, 4);
 
+  console.log("contacts==>", contacts);
+
   // NEED STATE API -1
   useEffect(() => {
     axios
@@ -188,19 +190,25 @@ export default function Content(props) {
     const newContact = {
       id: `${btqId}2400${id1}${counter}`,
       date,
-      btqId,
+      btqCode: btqId,
       region,
       rsoName,
-      Collection: addFormData.Collection,
-      getNeedState: addFormData.getNeedState,
+      collection: addFormData.Collection,
+      needState: addFormData.getNeedState,
       group: addFormData.group,
-      Category: addFormData.Category,
-      CatPB: addFormData.CatPB,
-      DesiredLength: addFormData.DesiredLength,
-      RequiredWeight: addFormData.RequiredWeight,
+      category: addFormData.Category,
+      catPB: addFormData.CatPB,
+      lengthSize: addFormData.DesiredLength,
+      reqWeight: addFormData.RequiredWeight,
       range: range,
       concept: addFormData.concept,
-      image: "image url",
+      url: "http://dummyTestLink",
+      url1: "",
+      url2: "",
+      action: "",
+      remark: "",
+      additional1: "",
+      additional2: "",
     };
     const newContacts = [...contacts, newContact];
     setContacts(newContacts);
@@ -217,27 +225,10 @@ export default function Content(props) {
 
   const lastSubmit = () => {
     setLoading(true);
-    const newContact = {
-      id: `${btqId}2400${id1}${counter}`,
-      date,
-      btqId,
-      region,
-      rsoName,
-      Collection: addFormData.Collection,
-      getNeedState: addFormData.getNeedState,
-      group: addFormData.group,
-      Category: addFormData.Category,
-      CatPB: addFormData.CatPB,
-      DesiredLength: addFormData.DesiredLength,
-      RequiredWeight: addFormData.RequiredWeight,
-      range: range,
-      concept: addFormData.concept,
-    };
-    console.log("newContact==>", newContact);
     const config = {
       method: "POST",
       url: "https://tanishqdigitalnpim.titan.in:8443/bottomUp/BottomUp/item/details/submit",
-      data: newContact,
+      data: contacts,
     };
     axios(config)
       .then((response) => response)
