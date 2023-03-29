@@ -18,7 +18,6 @@ function DropBox(props, { onDrop }) {
       {list.name} - {list.size} bytes
     </li>
   ));
-  console.log("lists==>", lists);
   const fileRejectionItems = fileRejections.map(({ list, errors }) => {
     return (
       <li key={list.path}>

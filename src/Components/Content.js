@@ -225,7 +225,6 @@ export default function Content(props) {
 
   const lastSubmit = () => {
     setLoading(true);
-    console.log("loading1==>", loading);
     const config = {
       method: "POST",
       url: "https://tanishqdigitalnpim.titan.in:8443/bottomUp/BottomUp/item/details/submit",
@@ -236,7 +235,6 @@ export default function Content(props) {
       .then((result) => console.log("result==>", result))
       .catch((error) => console.log("error==>", error));
     setLoading(false);
-    console.log("loading2==>", loading);
   };
 
   return (
