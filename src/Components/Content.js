@@ -188,7 +188,7 @@ export default function Content(props) {
     const incrementCounter = () => setCounter(counter + 1);
     incrementCounter();
     const newContact = {
-      id: `${btqId}2400${id1}${counter}`,
+      btqid: `${btqId}2400${id1}${counter}`,
       date,
       btqCode: btqId,
       region,
