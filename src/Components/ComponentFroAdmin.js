@@ -9,10 +9,9 @@ function TextFieldOfMUI(props) {
     <>
       <TextField
         fullWidth
-        id="outlined-basic"
         label={label}
         type={type}
-        variant="outlined"
+        variant="standard"
         onChange={textFieldHandlerChange}
         value={value}
         name={name}
@@ -33,13 +32,13 @@ const SelectOfMUI = (props) => {
 
   return (
     <>
-      <FormControl fullWidth variant="outlined">
+      <FormControl fullWidth variant="standard">
         <TextField
           label={placeholder}
           value={value}
           onChange={selectHandleChange}
           name={name}
-          variant="outlined"
+          variant="standard"
           onSelect={handleChange}
           select
         >

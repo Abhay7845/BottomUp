@@ -102,7 +102,7 @@ export default function Login(props) {
                     {passwordShown ? (
                       <FaRegEye
                         size={20}
-                        cursor="pointer"
+                        or="pointer"
                         onClick={togglePassword}
                         style={{ marginTop: 15 }}
                       />

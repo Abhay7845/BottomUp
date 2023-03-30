@@ -253,7 +253,6 @@ export default function Content(props) {
               value={selectedCollection}
               selectHandleChange={handleAddFormChange}
               name="Collection"
-              required="required"
             />
           </Grid>
           <Grid>
