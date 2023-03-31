@@ -156,7 +156,7 @@ export default function Content(props) {
     setRange("");
     setConcept("");
   };
-  const handleAddFormSubmit = (e) => {
+  const handleAddFormSubmit = () => {
     if (rsoName === "") {
       alert("RSO Name is Required");
       return;
@@ -214,6 +214,7 @@ export default function Content(props) {
     setContacts(newContacts);
     handleReset();
     handleResetFiled();
+    showAlert("Your Data Added Successfully", "success");
   };
 
   const handleDeleteClick = (contactId) => {
@@ -221,6 +222,7 @@ export default function Content(props) {
     const index = contacts.findIndex((contact) => contact.id === contactId);
     newContacts.splice(index, 1);
     setContacts(newContacts);
+    showAlert("Dta Row has been Deleted", "success");
   };
 
   const lastSubmit = () => {
