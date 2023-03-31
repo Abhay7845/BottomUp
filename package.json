@@ -11,7 +11,7 @@
     "@material-ui/data-grid": "^4.0.0-alpha.37",
     "@material-ui/lab": "^4.0.0-alpha.61",
     "@material-ui/system": "^4.12.2",
-    "@mui/material": "^5.11.13",
+    "@mui/material": "^5.11.15",
     "@mui/styles": "^5.10.16",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.3",
     "@react-oauth/google": "^0.5.1",

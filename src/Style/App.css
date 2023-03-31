@@ -224,7 +224,7 @@ fieldset.PrivateNotchedOutline-root-1.MuiOutlinedInput-notchedOutline {
 .grid-container {
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   display: grid;
-  column-gap: 50px;
+  column-gap: 30px;
   row-gap: 20px;
 }
 
@@ -267,13 +267,6 @@ fieldset.PrivateNotchedOutline-root-1.MuiOutlinedInput-notchedOutline {
   justify-content: center;
 }
 
-.formDisplay {
-  border-radius: 18px;
-  padding: 15px;
-  height: auto;
-  width: 100%;
-  margin-bottom: 20px;
-}
 
 .oneline {
   display: flex;

@@ -32,7 +32,7 @@ const SelectOfMUI = (props) => {
 
   return (
     <>
-      <FormControl fullWidth variant="outlined">
+      <FormControl fullWidth>
         <TextField
           label={placeholder}
           value={value}

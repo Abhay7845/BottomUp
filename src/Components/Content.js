@@ -244,89 +244,89 @@ export default function Content(props) {
 
   return (
     <>
-      <form className="formDisplay">
-        <div style={{ padding: 20 }} className="grid-container">
-          <Grid>
-            <SelectOfMUI
-              placeholder="Collection"
-              optionList={collection_options}
-              value={selectedCollection}
-              selectHandleChange={handleAddFormChange}
-              name="Collection"
-            />
-          </Grid>
-          <Grid>
-            <SelectOfMUI
-              placeholder="Need State"
-              optionList={getNeedState}
-              selectHandleChange={handleAndNeedStateFormChange}
-              value={needState}
-              name="getNeedState"
-            />
-          </Grid>
-          <Grid>
-            <SelectOfMUI
-              placeholder="Group"
-              optionList={getGroup}
-              selectHandleChange={handleGroupChange}
-              value={group}
-              name="group"
-            />
-          </Grid>
-          <Grid>
-            <SelectOfMUI
-              placeholder="Category"
-              optionList={getCategory}
-              selectHandleChange={handleCategoryChange}
-              value={category}
-              name="Category"
-            />
-          </Grid>
-          <Grid item xs={12} sm={12}>
-            <SelectOfMUI
-              placeholder="CatPB"
-              optionList={getCatPB}
-              selectHandleChange={handleCatPBChange}
-              value={catPB}
-              name="CatPB"
-            />
-          </Grid>
-          <Grid item xs={12} sm={12}>
-            <SelectOfMUI
-              placeholder="DesiredLength/Size"
-              optionList={alphabet}
-              selectHandleChange={handleDesiredLength}
-              value={lengthSize}
-              name="DesiredLength"
-            />
-          </Grid>
-          <Grid item xs={12} sm={12}>
-            <TextFieldOfMUI
-              label="Required Weight"
-              type="text"
-              value={reqWeight}
-              textFieldHandlerChange={handleWeight}
-              name="RequiredWeight"
-            />
-          </Grid>
-          <Grid item xs={12} sm={12}>
-            <TextFieldOfMUI label="Range" value={range} name="Range" />
-          </Grid>
-        </div>
-        <div className="content">
-          <input
-            name="concept"
-            id="label-fileComment-upload"
-            type="text"
-            placeholder="Concept please explain in detail(max 100 characters)"
-            onChange={(e) => {
-              setConcept(e.target.value);
-              addChange(e);
-            }}
-            value={concept}
+      <div style={{ padding: 15 }} className="grid-container">
+        <Grid>
+          <SelectOfMUI
+            placeholder="Collection"
+            optionList={collection_options}
+            value={selectedCollection}
+            selectHandleChange={handleAddFormChange}
+            name="Collection"
           />
-          <DropBox btqId="MAM_01" />
-        </div>
+        </Grid>
+        <Grid>
+          <SelectOfMUI
+            placeholder="Need State"
+            optionList={getNeedState}
+            selectHandleChange={handleAndNeedStateFormChange}
+            value={needState}
+            name="getNeedState"
+          />
+        </Grid>
+        <Grid>
+          <SelectOfMUI
+            placeholder="Group"
+            optionList={getGroup}
+            selectHandleChange={handleGroupChange}
+            value={group}
+            name="group"
+          />
+        </Grid>
+        <Grid>
+          <SelectOfMUI
+            placeholder="Category"
+            optionList={getCategory}
+            selectHandleChange={handleCategoryChange}
+            value={category}
+            name="Category"
+          />
+        </Grid>
+        <Grid item xs={12} sm={12}>
+          <SelectOfMUI
+            placeholder="CatPB"
+            optionList={getCatPB}
+            selectHandleChange={handleCatPBChange}
+            value={catPB}
+            name="CatPB"
+          />
+        </Grid>
+        <Grid item xs={12} sm={12}>
+          <SelectOfMUI
+            placeholder="DesiredLength/Size"
+            optionList={alphabet}
+            selectHandleChange={handleDesiredLength}
+            value={lengthSize}
+            name="DesiredLength"
+          />
+        </Grid>
+        <Grid item xs={12} sm={12}>
+          <TextFieldOfMUI
+            label="Required Weight"
+            type="text"
+            value={reqWeight}
+            textFieldHandlerChange={handleWeight}
+            name="RequiredWeight"
+          />
+        </Grid>
+        <Grid item xs={12} sm={12}>
+          <TextFieldOfMUI label="Range" value={range} name="Range" />
+        </Grid>
+      </div>
+      <div className="content">
+        <input
+          name="concept"
+          id="label-fileComment-upload"
+          type="text"
+          placeholder="Concept please explain in detail(max 100 characters)"
+          onChange={(e) => {
+            setConcept(e.target.value);
+            addChange(e);
+          }}
+          value={concept}
+        />
+        <DropBox btqId="MAM_01" />
+      </div>
+      <div className="my-3">
         <Button
           variant="contained"
           style={{
@@ -339,7 +339,7 @@ export default function Content(props) {
         >
           SUBMIT
         </Button>
-      </form>
+      </div>
       <div className="table table-responsive">
         <table
           className="table table-bordered"
