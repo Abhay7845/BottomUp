@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../Style/App.css";
 import axios from "axios";
-import { Grid, Button } from "@material-ui/core";
+import { Button } from "@material-ui/core";
 import { SelectOfMUI, TextFieldOfMUI } from "./ComponentFroAdmin";
 import ReadOnlyRow from "./ReadOnlyRow";
 import DropBox from "./DragDrop";
@@ -245,72 +245,58 @@ export default function Content(props) {
   return (
     <>
       <div style={{ padding: 15 }} className="grid-container">
-        <Grid>
-          <SelectOfMUI
-            placeholder="Collection"
-            optionList={collection_options}
-            value={selectedCollection}
-            selectHandleChange={handleAddFormChange}
-            name="Collection"
-          />
-        </Grid>
-        <Grid>
-          <SelectOfMUI
-            placeholder="Need State"
-            optionList={getNeedState}
-            selectHandleChange={handleAndNeedStateFormChange}
-            value={needState}
-            name="getNeedState"
-          />
-        </Grid>
-        <Grid>
-          <SelectOfMUI
-            placeholder="Group"
-            optionList={getGroup}
-            selectHandleChange={handleGroupChange}
-            value={group}
-            name="group"
-          />
-        </Grid>
-        <Grid>
-          <SelectOfMUI
-            placeholder="Category"
-            optionList={getCategory}
-            selectHandleChange={handleCategoryChange}
-            value={category}
-            name="Category"
-          />
-        </Grid>
-        <Grid item xs={12} sm={12}>
-          <SelectOfMUI
-            placeholder="CatPB"
-            optionList={getCatPB}
-            selectHandleChange={handleCatPBChange}
-            value={catPB}
-            name="CatPB"
-          />
-        </Grid>
-        <Grid item xs={12} sm={12}>
-          <SelectOfMUI
-            placeholder="DesiredLength/Size"
-            optionList={alphabet}
-            selectHandleChange={handleDesiredLength}
-            value={lengthSize}
-            name="DesiredLength"
-          />
-        </Grid>
-        <Grid item xs={12} sm={12}>
-          <TextFieldOfMUI
-            label="Required Weight"
-            type="text"
-            value={reqWeight}
-            textFieldHandlerChange={handleWeight}
-            name="RequiredWeight"
-          />
-        </Grid>
-        <Grid item xs={12} sm={12}>
-          <TextFieldOfMUI label="Range" value={range} name="Range" />
-        </Grid>
+        <SelectOfMUI
+          placeholder="Collection"
+          optionList={collection_options}
+          value={selectedCollection}
+          selectHandleChange={handleAddFormChange}
+          name="Collection"
+        />
+        <SelectOfMUI
+          placeholder="Need State"
+          optionList={getNeedState}
+          selectHandleChange={handleAndNeedStateFormChange}
+          value={needState}
+          name="getNeedState"
+        />
+
+        <SelectOfMUI
+          placeholder="Group"
+          optionList={getGroup}
+          selectHandleChange={handleGroupChange}
+          value={group}
+          name="group"
+        />
+
+        <SelectOfMUI
+          placeholder="Category"
+          optionList={getCategory}
+          selectHandleChange={handleCategoryChange}
+          value={category}
+          name="Category"
+        />
+        <SelectOfMUI
+          placeholder="CatPB"
+          optionList={getCatPB}
+          selectHandleChange={handleCatPBChange}
+          value={catPB}
+          name="CatPB"
+        />
+        <SelectOfMUI
+          placeholder="DesiredLength/Size"
+          optionList={alphabet}
+          selectHandleChange={handleDesiredLength}
+          value={lengthSize}
+          name="DesiredLength"
+        />
+        <TextFieldOfMUI
+          label="Required Weight"
+          type="text"
+          value={reqWeight}
+          textFieldHandlerChange={handleWeight}
+          name="RequiredWeight"
+        />
+        <TextFieldOfMUI label="Range" value={range} name="Range" />
       </div>
       <div className="content">
         <input
