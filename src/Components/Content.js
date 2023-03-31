@@ -245,7 +245,7 @@ export default function Content(props) {
   return (
     <>
       <form className="formDisplay">
-        <div className="grid-container">
+        <div style={{ padding: 20 }} className="grid-container">
           <Grid>
             <SelectOfMUI
               placeholder="Collection"

@@ -11,7 +11,7 @@ function TextFieldOfMUI(props) {
         fullWidth
         label={label}
         type={type}
-        variant="standard"
+        variant="outlined"
         onChange={textFieldHandlerChange}
         value={value}
         name={name}
@@ -32,13 +32,13 @@ const SelectOfMUI = (props) => {
 
   return (
     <>
-      <FormControl fullWidth variant="standard">
+      <FormControl fullWidth variant="outlined">
         <TextField
           label={placeholder}
           value={value}
           onChange={selectHandleChange}
           name={name}
-          variant="standard"
+          variant="outlined"
           onSelect={handleChange}
           select
         >
