@@ -47,7 +47,10 @@ export default function Login(props) {
           props.showAlert("Logged in Successfully", "success");
         }
         if (response.data.status === false) {
-          props.showAlert("Please enter valid Username and Password", "danger");
+          props.showAlert(
+            "Please enter valid Username and Password!",
+            "danger"
+          );
         }
         setLoading(false);
       })
