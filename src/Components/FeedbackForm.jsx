@@ -1,17 +1,14 @@
 import Content from "./Content";
 import Header from "./Header";
-import React, { useState } from "react";
+import React from "react";
 import "../Style/App.css";
 import { TextField } from "@material-ui/core";
 
 export default function FirstPage(props) {
   const { showAlert } = props;
-  const [rsoName, setRsoName] = useState("");
-  function handlerName(e) {
-    setRsoName(e.target.value);
-  }
   const btqId = localStorage.getItem("btqId");
   const region = localStorage.getItem("region");
+  const rsoName = localStorage.getItem("rsoName");
   return (
     <div className="App">
       <div className="header">
@@ -26,12 +23,7 @@ export default function FirstPage(props) {
             value={region}
             className="my-2"
           />
-          <TextField
-            variant="filled"
-            label="RSO Name"
-            value={rsoName}
-            onChange={handlerName}
-          />
+          <TextField variant="filled" label="RSO Name" value={rsoName} />
         </div>
         <div className="reportLast">
           <hr style={{ width: "300%", marginLeft: "8px" }} />

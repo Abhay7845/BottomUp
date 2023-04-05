@@ -157,10 +157,7 @@ export default function Content(props) {
     setConcept("");
   };
   const handleAddFormSubmit = () => {
-    if (rsoName === "") {
-      alert("RSO Name is Required");
-      return;
-    } else if (addFormData.Collection === "") {
+    if (addFormData.Collection === "") {
       alert("Collection is Required");
       return;
     } else if (addFormData.getNeedState === "") {

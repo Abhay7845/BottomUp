@@ -12,6 +12,7 @@ import image from "../Asset/Img/Tanishq_Logo1.png";
 import { FaRegEyeSlash, FaRegEye } from "react-icons/fa";
 
 export default function Login(props) {
+  const { showAlert } = props;
   const [passwordShown, setPasswordShown] = useState(false);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -33,24 +34,27 @@ export default function Login(props) {
 
   const onLogin = (payload) => {
     setLoading(true);
-    const { email, password, rsoName } = payload;
-    console.log(email, password, rsoName);
+    const { userName, password, rsoName } = payload;
+    localStorage.setItem("rsoName", rsoName);
+    const inputData = {
+      userName,
+      password,
+    };
     axios
-      .get(
-        `https://tanishqdigitalnpim.titan.in:8443/bottomUp/BottomUp//getRegion/${email}`
+      .post(
+        "https://tanishqdigitalnpim.titan.in:8443/bottomUp/BottomUp/bottomUp/user/login",
+        inputData
       )
       .then((response) => {
-        localStorage.setItem("btqId", response.data.value.btqCode);
+        console.log("response==>", response);
+        localStorage.setItem("btqId", response.data.value.userName);
         localStorage.setItem("region", response.data.value.region);
-        if (response.data.status === true) {
+        if (response.data.code === "1000") {
           navigate("/bottom/up/feedback/form");
-          props.showAlert("Logged in Successfully", "success");
+          showAlert("Logged in Successfully", "success");
         }
-        if (response.data.status === false) {
-          props.showAlert(
-            "Please enter valid Username and Password!",
-            "danger"
-          );
+        if (response.data.code === "1001") {
+          showAlert("Please enter valid Username and Password!", "danger");
         }
         setLoading(false);
       })
@@ -87,8 +91,12 @@ export default function Login(props) {
                 <b>
                   Username <span className="text-danger"> *</span>
                 </b>
-                <Field placeholder="Email" name="email" className="GInput" />
-                <ShowError name="email" />
+                <Field
+                  placeholder="Username"
+                  name="userName"
+                  className="GInput"
+                />
+                <ShowError name="userName" />
               </div>
               <div className="my-2">
                 <b>
