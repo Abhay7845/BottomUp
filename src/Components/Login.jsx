@@ -42,7 +42,7 @@ export default function Login(props) {
     };
     axios
       .post(
-        "https://tanishqdigitalnpim.titan.in:8443/bottomUp/BottomUp/bottomUp/user/login",
+        "https://tanishqdigitalnpim.titan.in:8443/bottomUp/BottomUp/user/login",
         inputData
       )
       .then((response) => {
@@ -58,7 +58,10 @@ export default function Login(props) {
         }
         setLoading(false);
       })
-      .catch((error) => console.log("error=>", error));
+      .catch((error) => {
+        setLoading(false);
+        console.log("error=>", error);
+      });
   };
 
   const togglePassword = () => {
