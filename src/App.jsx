@@ -23,7 +23,7 @@ const App = () => {
         <Routes>
           <Route
             index
-            path="/bottom/up/login"
+            path="/Bottom_Up"
             element={<Login showAlert={showAlert} />}
           />
           <Route
