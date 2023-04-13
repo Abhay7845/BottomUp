@@ -3,7 +3,7 @@ import "./Style/App.css";
 import Login from "./Components/Login";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import FirstPage from "./Components/FeedbackForm";
-import Alert from "./Components/Alert";
+import Alert from "./Components/Common/Alert";
 
 const App = () => {
   const [alert, setAlert] = useState(null);

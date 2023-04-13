@@ -1,8 +1,6 @@
-// /*global google*/
 import React, { useState } from "react";
 import axios from "axios";
 import "../Style/Login.css";
-// import jwt_decode from "jwt-decode";
 import "../Style/index.css";
 import { useNavigate } from "react-router-dom";
 import { Field, Form, Formik } from "formik";
@@ -16,21 +14,6 @@ export default function Login(props) {
   const [passwordShown, setPasswordShown] = useState(false);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  // function handleCallbackResponse(response) {
-  //   var userObject = jwt_decode(response.credential);
-  //   setUser(userObject);
-  // }
-  // useEffect(() => {
-  //   google.accounts.id.initialize({
-  //     client_id:
-  //       "957490624222-3qff6c9c7l2nm2inrerd7ge27otke5ok.apps.googleusercontent.com",
-  //     callback: handleCallbackResponse,
-  //     auto_select: false,
-  //   });
-  //   google.accounts.id.renderButton(document.getElementById("signInDiv"), {
-  //     width: "250",
-  //   });
-  // }, []);
 
   const onLogin = (payload) => {
     setLoading(true);
@@ -69,16 +52,6 @@ export default function Login(props) {
   };
   return (
     <>
-      {/* <center>
-        <header className="LoginPage shadow">
-          <br />
-          <h2>Welcome to Bottom UP</h2>
-          <br />
-          <br />
-          <h4 className="my-3">Continue with Your Email</h4>
-          <button id="signInDiv" className="LoginButton" />
-        </header>
-      </center> */}
       <div className="col RegisterLeftRight">
         <div className="Form_style">
           <div className="text-center" style={{ color: "#832729" }}>
@@ -116,7 +89,7 @@ export default function Login(props) {
                     {passwordShown ? (
                       <FaRegEye
                         size={20}
-                        or="pointer"
+                        cursor="pointer"
                         onClick={togglePassword}
                         style={{ marginTop: 15 }}
                       />
