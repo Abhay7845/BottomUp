@@ -1,8 +1,8 @@
 import Content from "./Content";
-import Header from "./Header";
+import Header from "./Common/Header";
 import React from "react";
 import "../Style/App.css";
-import { TextField } from "@material-ui/core";
+import Sidebar from "./Common/Sidebar";
 
 export default function FirstPage(props) {
   const { showAlert } = props;
@@ -14,31 +14,7 @@ export default function FirstPage(props) {
       <div className="header">
         <Header />
       </div>
-      <div className="sideBar">
-        <div className="SideBarInput">
-          <TextField variant="filled" label="BTQ ID" value={btqId} />
-          <TextField
-            variant="filled"
-            label="REGION"
-            value={region}
-            className="my-2"
-          />
-          <TextField variant="filled" label="RSO Name" value={rsoName} />
-        </div>
-        <div className="reportLast">
-          <hr style={{ width: "300%", marginLeft: "8px" }} />
-          <button
-            className="ReportButton"
-            onClick={(e) => {
-              e.preventDefault();
-              window.location.href =
-                "https://d1whtlypfis84e.cloudfront.net/guides/wp-content/uploads/2018/10/29232033/report.jpg";
-            }}
-          >
-            REPORT
-          </button>
-        </div>
-      </div>
+      <Sidebar />
       <div className="main">
         <Content
           btqId={btqId}

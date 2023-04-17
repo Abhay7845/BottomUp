@@ -4,6 +4,7 @@ import Login from "./Components/Login";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import FirstPage from "./Components/FeedbackForm";
 import Alert from "./Components/Common/Alert";
+import { Admin } from "./Components/Admin";
 
 const App = () => {
   const [alert, setAlert] = useState(null);
@@ -30,6 +31,7 @@ const App = () => {
             path="/bottom/up/feedback/form"
             element={<FirstPage showAlert={showAlert} />}
           />
+          <Route path="/bottom/up/admin" element={<Admin />} />
         </Routes>
       </BrowserRouter>
     </>

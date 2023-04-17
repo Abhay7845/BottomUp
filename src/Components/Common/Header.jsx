@@ -1,6 +1,6 @@
 import React from "react";
-import "../Style/Title.css";
-import logo from "../../src/Asset/Img/tanishq.svg";
+import "../../Style/Title.css";
+import logo from "../../../src/Asset/Img/tanishq.svg";
 
 export default function Header() {
   return (
