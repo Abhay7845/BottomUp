@@ -2,7 +2,7 @@ import React from "react";
 import Header from "./Common/Header";
 import "../Style/Admin.css";
 import { Field, Form, Formik } from "formik";
-import { AdminInitialValue, AdminSchema } from "../Schema/Admin";
+import { AdminInitialValue, AdminSchema } from "../Schema/AdminSchem";
 import ShowError from "../Schema/ShowError";
 
 export const Admin = () => {
@@ -27,11 +27,11 @@ export const Admin = () => {
             <label className="my-1">
               NEED STATE <span className="text-danger">*</span>
             </label>
-            <Field as="select" className="CSelect" name="needSate">
+            <Field as="select" className="CSelect" name="needState">
               <option value="">Select</option>
-              <option>NeedSate</option>
+              <option>NeedState</option>
             </Field>
-            <ShowError name="needSate" />
+            <ShowError name="needState" />
           </div>
           <div className="col-md-4 CInput">
             <label className="my-1">
@@ -49,7 +49,7 @@ export const Admin = () => {
           </div>
           <div className="d-flex justify-content-end GButton my-4">
             <button type="submit" className="CButton">
-              GENERATE REPORTS
+              GENERATE
             </button>
           </div>
         </Form>
