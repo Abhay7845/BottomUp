@@ -1,7 +1,7 @@
 {
   "name": "addlist",
   "version": "0.1.0",
-  "homepage": "https://tanishqdigitalnpim.titan.in:8443/Bottom_Up",
+  "homepage": "https://tanishqdigitalnpim.titan.in/Bottom_Up",
   "private": true,
   "dependencies": {
     "@babel/core": "^7.16.0",

@@ -31,7 +31,10 @@ const App = () => {
             path="/bottom/up/feedback/form"
             element={<FirstPage showAlert={showAlert} />}
           />
-          <Route path="/bottom/up/admin" element={<Admin />} />
+          <Route
+            path="/bottom/up/admin"
+            element={<Admin showAlert={showAlert} />}
+          />
         </Routes>
       </BrowserRouter>
     </>
