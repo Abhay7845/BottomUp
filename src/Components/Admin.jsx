@@ -4,6 +4,7 @@ import "../Style/Admin.css";
 import { Field, Form, Formik } from "formik";
 import { AdminInitialValue, AdminSchema } from "../Schema/AdminSchem";
 import ShowError from "../Schema/ShowError";
+import { NeedSateValues } from "../Data/DataList";
 
 export const Admin = () => {
   const OnGenerateReports = (payload) => {
@@ -29,7 +30,13 @@ export const Admin = () => {
             </label>
             <Field as="select" className="CSelect" name="needState">
               <option value="">Select</option>
-              <option>NeedState</option>
+              {NeedSateValues.map((item, i) => {
+                return (
+                  <option key={i} value={item.value}>
+                    {item.name}
+                  </option>
+                );
+              })}
             </Field>
             <ShowError name="needState" />
           </div>
