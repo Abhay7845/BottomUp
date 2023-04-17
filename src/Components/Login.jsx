@@ -32,8 +32,12 @@ export default function Login(props) {
         console.log("response==>", response);
         localStorage.setItem("btqId", response.data.value.userName);
         localStorage.setItem("region", response.data.value.region);
-        if (response.data.code === "1000") {
+        if (response.data.value.role === "RSO") {
           navigate("/bottom/up/feedback/form");
+          showAlert("Logged in Successfully", "success");
+        }
+        if (response.data.value.role === "Admin") {
+          navigate("/bottom/up/admin");
           showAlert("Logged in Successfully", "success");
         }
         if (response.data.code === "1001") {

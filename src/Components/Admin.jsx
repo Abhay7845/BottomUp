@@ -54,6 +54,53 @@ export const Admin = () => {
           </div>
         </Form>
       </Formik>
+      <div className="table table-responsive p-1">
+        <table
+          className="table table-bordered"
+          style={{ border: "1px solid black" }}
+        >
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>BTQCode</th>
+              <th>RSOName</th>
+              <th>Collection</th>
+              <th>NeedState</th>
+              <th>Group</th>
+              <th>Category</th>
+              <th>CatPB</th>
+              <th>LengthSize</th>
+              <th>RequiredWeight</th>
+              <th>Range</th>
+              <th>Concept</th>
+              <th>Region</th>
+              <th>URL</th>
+              <th>Action</th>
+              <th>Remarks</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+              <td>@mdo</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </>
   );
 };

@@ -9,13 +9,6 @@ export const LoginInitialValue = {
 
 export const LoginSchema = yup.object({
   userName: yup.string().required("Username is required"),
-  password: yup
-    .string()
-    .required("Password is required")
-    .matches(
-      /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/g,
-      "Password should be strong"
-    )
-    .min(8, "Minimum 8 character"),
+  password: yup.string().required("Password is required"),
   rsoName: yup.string().required("RSO Name Is required"),
 });
