@@ -219,7 +219,7 @@ export default function Content(props) {
     const index = contacts.findIndex((contact) => contact.id === contactId);
     newContacts.splice(index, 1);
     setContacts(newContacts);
-    showAlert("Dta Row has been Deleted", "success");
+    showAlert("Data Row has been Deleted", "success");
   };
 
   const lastSubmit = () => {
