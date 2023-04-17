@@ -1,40 +1,56 @@
 import React from "react";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
-import { TextField } from "@mui/material";
-import Button from "@mui/material/Button";
 import Header from "./Common/Header";
 import "../Style/Admin.css";
-import { Form, Formik } from "formik";
+import { Field, Form, Formik } from "formik";
+import { AdminInitialValue, AdminSchema } from "../Schema/Admin";
+import ShowError from "../Schema/ShowError";
 
 export const Admin = () => {
+  const OnGenerateReports = (payload) => {
+    console.log("payload==>", payload);
+  };
   return (
     <>
       <div className="header">
         <Header />
       </div>
-      <Formik>
-        <Form className="row mx-0 my-5">
-          <div className="col-md-3">
-            <FormControl className="w-100">
-              <InputLabel>NeedSate</InputLabel>
-              <Select label="NeedSate">
-                <MenuItem value={10}>Ten</MenuItem>
-                <MenuItem value={20}>Twenty</MenuItem>
-                <MenuItem value={30}>Thirty</MenuItem>
-              </Select>
-            </FormControl>
+      <Formik
+        initialValues={AdminInitialValue}
+        validationSchema={AdminSchema}
+        onSubmit={(payload, { resetForm }) => {
+          OnGenerateReports(payload);
+          resetForm();
+        }}
+      >
+        <Form className="row mx-0 my-4">
+          <div className="col-md-4">
+            <label className="my-1">
+              NEED STATE <span className="text-danger">*</span>
+            </label>
+            <Field as="select" className="CSelect" name="needSate">
+              <option value="">Select</option>
+              <option>NeedSate</option>
+            </Field>
+            <ShowError name="needSate" />
           </div>
-          <div className="col-md-3 CInput">
-            <TextField label="From Date" variant="outlined" className="w-100" />
+          <div className="col-md-4 CInput">
+            <label className="my-1">
+              FROM DATE <span className="text-danger">*</span>
+            </label>
+            <Field type="Date" className="CSelect" name="fromDate" />
+            <ShowError name="fromDate" />
           </div>
-          <div className="col-md-3 CInput">
-            <TextField label="To Date" variant="outlined" className="w-100" />
+          <div className="col-md-4 CInput">
+            <label className="my-1">
+              TO DATE <span className="text-danger">*</span>
+            </label>
+            <Field type="Date" className="CSelect" name="toDate" />
+            <ShowError name="toDate" />
           </div>
-          <div className="col-md-3 GButton">
-            <Button variant="contained">Generate Reports</Button>
+          <div className="d-flex justify-content-end GButton my-4">
+            <button type="submit" className="CButton">
+              GENERATE REPORTS
+            </button>
           </div>
         </Form>
       </Formik>
