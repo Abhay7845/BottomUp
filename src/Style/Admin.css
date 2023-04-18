@@ -25,3 +25,20 @@
         justify-content: flex-end;
     }
 }
+
+.excelButton {
+    height: 30px;
+    margin-top: 6px;
+    border: none;
+    background-color: #268d26;
+    outline: none;
+    color: #fff;
+    border-radius: 2px;
+    padding-bottom: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.excelButton:hover {
+    background-color: #27ac27;
+}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "./Common/Header";
 import "../Style/Admin.css";
 import { Field, Form, Formik } from "formik";
@@ -6,10 +6,23 @@ import { AdminInitialValue, AdminSchema } from "../Schema/AdminSchem";
 import ShowError from "../Schema/ShowError";
 import { BsCheckCircleFill, BsXCircleFill } from "react-icons/bs";
 import { NeedSateValues, ReportsData } from "../Data/DataList";
+import TablePagination from "@mui/material/TablePagination";
+import ReactHTMLTableToExcel from "react-html-table-to-excel";
 
 export const Admin = () => {
+  const [page, setPage] = useState(0);
+  const [rowsPerPage, setRowsPerPage] = useState(50);
   const OnGenerateReports = (payload) => {
     console.log("payload==>", payload);
+  };
+
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage);
+  };
+
+  const handleChangeRowsPerPage = (event) => {
+    setRowsPerPage(+event.target.value);
+    setPage(0);
   };
   return (
     <>
@@ -65,6 +78,7 @@ export const Admin = () => {
       <div className="table table-responsive p-1">
         <table
           className="table table-bordered"
+          id="table-to-xls"
           style={{ border: "1px solid black" }}
         >
           <thead>
@@ -88,7 +102,10 @@ export const Admin = () => {
             </tr>
           </thead>
           <tbody>
-            {ReportsData.map((item, i) => {
+            {ReportsData.slice(
+              page * rowsPerPage,
+              page * rowsPerPage + rowsPerPage
+            ).map((item, i) => {
               return (
                 <tr key={i}>
                   <td>{item.date}</td>
@@ -115,6 +132,25 @@ export const Admin = () => {
             })}
           </tbody>
         </table>
+        <div className="d-flex justify-content-end my-2">
+          <ReactHTMLTableToExcel
+            id="test-table-xls-button"
+            className="excelButton"
+            table="table-to-xls"
+            filename="reports"
+            sheet="tablexls"
+            buttonText="DOWNLOAD"
+          />
+          <TablePagination
+            rowsPerPageOptions={[50, 100, 150, ReportsData.length]}
+            component="div"
+            count={ReportsData.length}
+            rowsPerPage={rowsPerPage}
+            page={page}
+            onPageChange={handleChangePage}
+            onRowsPerPageChange={handleChangeRowsPerPage}
+          />
+        </div>
       </div>
     </>
   );
