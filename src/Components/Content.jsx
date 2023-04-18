@@ -356,7 +356,7 @@ export default function Content(props) {
           </tbody>
         </table>
       </div>
-      <div className="d-flex justify-content-end mx-2">
+      <div className="d-flex justify-content-end">
         <button
           type="submit"
           className={`btn btn-danger ${
@@ -371,7 +371,7 @@ export default function Content(props) {
               aria-hidden="true"
             />
           ) : (
-            <span className="sr-only">SUBMIT</span>
+            <span>SUBMIT</span>
           )}
         </button>
       </div>

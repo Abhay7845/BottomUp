@@ -4,6 +4,7 @@ import "../Style/Admin.css";
 import { Field, Form, Formik } from "formik";
 import { AdminInitialValue, AdminSchema } from "../Schema/AdminSchem";
 import ShowError from "../Schema/ShowError";
+import { BsCheckCircleFill, BsXCircleFill } from "react-icons/bs";
 import { NeedSateValues } from "../Data/DataList";
 
 export const Admin = () => {
@@ -88,7 +89,7 @@ export const Admin = () => {
           </thead>
           <tbody>
             <tr>
-              <td>Mark</td>
+              <td>18/04/2023</td>
               <td>Otto</td>
               <td>@mdo</td>
               <td>Mark</td>
@@ -102,7 +103,10 @@ export const Admin = () => {
               <td>@mdo</td>
               <td>Mark</td>
               <td>Otto</td>
-              <td>@mdo</td>
+              <td className="d-flex justify-content-evenly">
+                <BsCheckCircleFill size={17} className="text-success" />
+                <BsXCircleFill size={17} className="text-danger" />
+              </td>
               <td>@mdo</td>
             </tr>
           </tbody>
