@@ -173,7 +173,6 @@ body {
   align-items: center;
   background: #F0e9e9;
   position: sticky;
-  z-index: -1;
 }
 
 .top_header {

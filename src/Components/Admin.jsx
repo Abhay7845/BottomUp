@@ -5,7 +5,7 @@ import { Field, Form, Formik } from "formik";
 import { AdminInitialValue, AdminSchema } from "../Schema/AdminSchem";
 import ShowError from "../Schema/ShowError";
 import { BsCheckCircleFill, BsXCircleFill } from "react-icons/bs";
-import { NeedSateValues } from "../Data/DataList";
+import { NeedSateValues, ReportsData } from "../Data/DataList";
 
 export const Admin = () => {
   const OnGenerateReports = (payload) => {
@@ -88,27 +88,31 @@ export const Admin = () => {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>18/04/2023</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td className="d-flex justify-content-evenly">
-                <BsCheckCircleFill size={17} className="text-success" />
-                <BsXCircleFill size={17} className="text-danger" />
-              </td>
-              <td>@mdo</td>
-            </tr>
+            {ReportsData.map((item, i) => {
+              return (
+                <tr key={i}>
+                  <td>{item.date}</td>
+                  <td>{item.name}</td>
+                  <td>{item.name}</td>
+                  <td>{item.name}</td>
+                  <td>{item.name}</td>
+                  <td>{item.name}</td>
+                  <td>{item.name}</td>
+                  <td>{item.name}</td>
+                  <td>{item.name}</td>
+                  <td>{item.name}</td>
+                  <td>{item.name}</td>
+                  <td>{item.name}</td>
+                  <td>{item.name}</td>
+                  <td>{item.name}</td>
+                  <td className="d-flex justify-content-evenly">
+                    <BsCheckCircleFill size={17} className="text-success" />
+                    <BsXCircleFill size={17} className="text-danger" />
+                  </td>
+                  <td>{item.name}</td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </div>
