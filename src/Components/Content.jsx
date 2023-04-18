@@ -233,7 +233,6 @@ export default function Content(props) {
       .then((response) => response)
       .then((result) => {
         if (result.data.Code === "1000") {
-          console.log("response==>", result);
           showAlert("Your Data has been Saved Successfully!", "success");
         }
       })
@@ -258,7 +257,6 @@ export default function Content(props) {
           value={needState}
           name="getNeedState"
         />
-
         <SelectOfMUI
           placeholder="Group"
           optionList={getGroup}
@@ -266,7 +264,6 @@ export default function Content(props) {
           value={group}
           name="group"
         />
-
         <SelectOfMUI
           placeholder="Category"
           optionList={getCategory}
