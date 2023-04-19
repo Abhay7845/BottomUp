@@ -42,3 +42,9 @@
 .excelButton:hover {
     background-color: #27ac27;
 }
+
+.ActionStyle {
+    display: flex;
+    border: none;
+    justify-content: space-evenly;
+}

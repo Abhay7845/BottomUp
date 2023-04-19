@@ -111,7 +111,7 @@ export const Admin = () => {
                     <td>{item.name}</td>
                     <td>{item.name}</td>
                     <td>{item.name}</td>
-                    <td className="d-flex justify-content-evenly">
+                    <td className="ActionStyle">
                       <BsCheckCircleFill size={17} className="text-success" />
                       <BsXCircleFill size={17} className="text-danger" />
                     </td>
