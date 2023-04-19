@@ -33,6 +33,56 @@ export const NeedSateValues = [
   { value: "FAITH & BELIEF", name: "FAITH & BELIEF" },
   { value: "WEDDING", name: "WEDDING" },
 ];
+export const ReportHeader = [
+  {
+    Headers: "Date",
+  },
+  {
+    Headers: "BTQCode",
+  },
+  {
+    Headers: "RSOName",
+  },
+  {
+    Headers: "Collection",
+  },
+  {
+    Headers: "NeedState",
+  },
+  {
+    Headers: "Group",
+  },
+  {
+    Headers: "Category",
+  },
+  {
+    Headers: "CatPB",
+  },
+  {
+    Headers: "LengthSize",
+  },
+  {
+    Headers: "RequiredWeight",
+  },
+  {
+    Headers: "Range",
+  },
+  {
+    Headers: "Concept",
+  },
+  {
+    Headers: "Region",
+  },
+  {
+    Headers: "URL",
+  },
+  {
+    Headers: "Action",
+  },
+  {
+    Headers: "Remarks",
+  },
+];
 
 export const ReportsData = [
   {

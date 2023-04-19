@@ -5,7 +5,7 @@ import { Field, Form, Formik } from "formik";
 import { AdminInitialValue, AdminSchema } from "../Schema/AdminSchem";
 import ShowError from "../Schema/ShowError";
 import { BsCheckCircleFill, BsXCircleFill } from "react-icons/bs";
-import { NeedSateValues, ReportsData } from "../Data/DataList";
+import { NeedSateValues, ReportHeader, ReportsData } from "../Data/DataList";
 import TablePagination from "@mui/material/TablePagination";
 import ReactHTMLTableToExcel from "react-html-table-to-excel";
 
@@ -83,22 +83,9 @@ export const Admin = () => {
         >
           <thead>
             <tr>
-              <th>Date</th>
-              <th>BTQCode</th>
-              <th>RSOName</th>
-              <th>Collection</th>
-              <th>NeedState</th>
-              <th>Group</th>
-              <th>Category</th>
-              <th>CatPB</th>
-              <th>LengthSize</th>
-              <th>RequiredWeight</th>
-              <th>Range</th>
-              <th>Concept</th>
-              <th>Region</th>
-              <th>URL</th>
-              <th>Action</th>
-              <th>Remarks</th>
+              {ReportHeader.map((item, i) => {
+                return <th key={i}>{item.Headers}</th>;
+              })}
             </tr>
           </thead>
           <tbody>
