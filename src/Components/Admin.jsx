@@ -75,70 +75,72 @@ export const Admin = () => {
           </div>
         </Form>
       </Formik>
-      <div className="table table-responsive p-1">
-        <table
-          className="table table-bordered"
-          id="table-to-xls"
-          style={{ border: "1px solid black" }}
-        >
-          <thead>
-            <tr>
-              {ReportHeaders.map((item, i) => {
-                return <th key={i}>{item.Headers}</th>;
+      {ReportsData.length > 0 && (
+        <div className="table table-responsive p-1">
+          <table
+            className="table table-bordered"
+            id="table-to-xls"
+            style={{ border: "1px solid black" }}
+          >
+            <thead>
+              <tr>
+                {ReportHeaders.map((item, i) => {
+                  return <th key={i}>{item.Headers}</th>;
+                })}
+              </tr>
+            </thead>
+            <tbody>
+              {ReportsData.slice(
+                page * rowsPerPage,
+                page * rowsPerPage + rowsPerPage
+              ).map((item, i) => {
+                return (
+                  <tr key={i}>
+                    <td>{item.date}</td>
+                    <td>{item.name}</td>
+                    <td>{item.name}</td>
+                    <td>{item.name}</td>
+                    <td>{item.name}</td>
+                    <td>{item.name}</td>
+                    <td>{item.name}</td>
+                    <td>{item.name}</td>
+                    <td>{item.name}</td>
+                    <td>{item.name}</td>
+                    <td>{item.name}</td>
+                    <td>{item.name}</td>
+                    <td>{item.name}</td>
+                    <td>{item.name}</td>
+                    <td className="d-flex justify-content-evenly">
+                      <BsCheckCircleFill size={17} className="text-success" />
+                      <BsXCircleFill size={17} className="text-danger" />
+                    </td>
+                    <td>{item.name}</td>
+                  </tr>
+                );
               })}
-            </tr>
-          </thead>
-          <tbody>
-            {ReportsData.slice(
-              page * rowsPerPage,
-              page * rowsPerPage + rowsPerPage
-            ).map((item, i) => {
-              return (
-                <tr key={i}>
-                  <td>{item.date}</td>
-                  <td>{item.name}</td>
-                  <td>{item.name}</td>
-                  <td>{item.name}</td>
-                  <td>{item.name}</td>
-                  <td>{item.name}</td>
-                  <td>{item.name}</td>
-                  <td>{item.name}</td>
-                  <td>{item.name}</td>
-                  <td>{item.name}</td>
-                  <td>{item.name}</td>
-                  <td>{item.name}</td>
-                  <td>{item.name}</td>
-                  <td>{item.name}</td>
-                  <td className="d-flex justify-content-evenly">
-                    <BsCheckCircleFill size={17} className="text-success" />
-                    <BsXCircleFill size={17} className="text-danger" />
-                  </td>
-                  <td>{item.name}</td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
-        <div className="d-flex justify-content-end my-2">
-          <ReactHTMLTableToExcel
-            id="test-table-xls-button"
-            className="excelButton"
-            table="table-to-xls"
-            filename="reports"
-            sheet="tablexls"
-            buttonText="DOWNLOAD"
-          />
-          <TablePagination
-            rowsPerPageOptions={[50, 100, 150, ReportsData.length]}
-            component="div"
-            count={ReportsData.length}
-            rowsPerPage={rowsPerPage}
-            page={page}
-            onPageChange={handleChangePage}
-            onRowsPerPageChange={handleChangeRowsPerPage}
-          />
+            </tbody>
+          </table>
+          <div className="d-flex justify-content-end my-2">
+            <ReactHTMLTableToExcel
+              id="test-table-xls-button"
+              className="excelButton"
+              table="table-to-xls"
+              filename="reports"
+              sheet="tablexls"
+              buttonText="DOWNLOAD"
+            />
+            <TablePagination
+              rowsPerPageOptions={[50, 100, 150, ReportsData.length]}
+              component="div"
+              count={ReportsData.length}
+              rowsPerPage={rowsPerPage}
+              page={page}
+              onPageChange={handleChangePage}
+              onRowsPerPageChange={handleChangeRowsPerPage}
+            />
+          </div>
         </div>
-      </div>
+      )}
     </>
   );
 };
