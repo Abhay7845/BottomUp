@@ -29,6 +29,7 @@ export const Admin = () => {
       <div className="header">
         <Header />
       </div>
+      <br />
       <Formik
         initialValues={AdminInitialValue}
         validationSchema={AdminSchema}
@@ -37,7 +38,7 @@ export const Admin = () => {
           resetForm();
         }}
       >
-        <Form className="row mx-0 my-4">
+        <Form className="row mx-0">
           <div className="col-md-4">
             <label className="my-1">
               NEED STATE <span className="text-danger">*</span>
