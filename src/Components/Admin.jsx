@@ -12,8 +12,11 @@ import ReactHTMLTableToExcel from "react-html-table-to-excel";
 export const Admin = () => {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(50);
+  const [loading, setLoading] = useState(false);
+
   const OnGenerateReports = (payload) => {
     console.log("payload==>", payload);
+    setLoading(true);
   };
 
   const handleChangePage = (event, newPage) => {
@@ -71,7 +74,15 @@ export const Admin = () => {
           </div>
           <div className="d-flex justify-content-end GButton my-4">
             <button type="submit" className="CButton">
-              GENERATE
+              {loading ? (
+                <span
+                  className="spinner-border spinner-border-sm"
+                  role="status"
+                  aria-hidden="true"
+                />
+              ) : (
+                <span className="sr-only">GENERATE</span>
+              )}
             </button>
           </div>
         </Form>
