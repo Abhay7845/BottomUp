@@ -30,7 +30,7 @@
     height: 30px;
     margin-top: 6px;
     border: none;
-    background-color: #268d26;
+    background-color: #27ac27;
     outline: none;
     color: #fff;
     border-radius: 2px;
@@ -40,7 +40,7 @@
 }
 
 .excelButton:hover {
-    background-color: #27ac27;
+    background-color: #268d26;
 }
 
 .ActionStyle {
