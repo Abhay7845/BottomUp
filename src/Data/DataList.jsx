@@ -33,7 +33,7 @@ export const NeedSateValues = [
   { value: "FAITH & BELIEF", name: "FAITH & BELIEF" },
   { value: "WEDDING", name: "WEDDING" },
 ];
-export const ReportHeader = [
+export const ReportHeaders = [
   {
     Headers: "Date",
   },
