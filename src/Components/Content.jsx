@@ -6,7 +6,7 @@ import { SelectOfMUI, TextFieldOfMUI } from "./ComponentFroAdmin";
 import ReadOnlyRow from "./ReadOnlyRow";
 import DropBox from "./DragDrop";
 import moment from "moment";
-import { alphabet } from "../Data/DataList";
+import { FeedBackReportsHeaders, alphabet } from "../Data/DataList";
 
 export default function Content(props) {
   const { btqId, region, rsoName, showAlert } = props;
@@ -329,24 +329,16 @@ export default function Content(props) {
         >
           <thead>
             <tr>
-              <th>Collection</th>
-              <th>NeedState</th>
-              <th>Group</th>
-              <th>Category</th>
-              <th>CatPB</th>
-              <th>DesiredLength</th>
-              <th>RequiredWeight</th>
-              <th>Range</th>
-              <th>Concept</th>
-              <th>Image</th>
-              <th>Action</th>
+              {FeedBackReportsHeaders.map((item, i) => {
+                return <th key={i}>{item.Headers}</th>;
+              })}
             </tr>
           </thead>
           <tbody>
             {contacts.map((contact, i) => (
               <ReadOnlyRow
-                contact={contact}
                 key={i}
+                contact={contact}
                 handleDeleteClick={handleDeleteClick}
               />
             ))}

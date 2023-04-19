@@ -84,6 +84,42 @@ export const ReportHeaders = [
   },
 ];
 
+export const FeedBackReportsHeaders = [
+  {
+    Headers: "Collection",
+  },
+  {
+    Headers: "NeedState",
+  },
+  {
+    Headers: "Group",
+  },
+  {
+    Headers: "Category",
+  },
+  {
+    Headers: "CatPB",
+  },
+  {
+    Headers: "DesiredLength",
+  },
+  {
+    Headers: "RequiredWeight",
+  },
+  {
+    Headers: "Range",
+  },
+  {
+    Headers: "Concept",
+  },
+  {
+    Headers: "Image",
+  },
+  {
+    Headers: "Action",
+  },
+];
+
 export const ReportsData = [
   {
     date: "18/04/2023",
