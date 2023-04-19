@@ -53,7 +53,7 @@ export default function Content(props) {
       )
       .then((response) => response)
       .then((result) => setGetNeedState(result.data.value))
-      .catch((error) => console.log("error123==>", error));
+      .catch((error) => error);
   }, [selectedCollection]);
 
   // NEED GROUP API -2
@@ -64,7 +64,7 @@ export default function Content(props) {
       )
       .then((response) => response)
       .then((result) => setGetGroup(result.data.value))
-      .catch((error) => console.log("error321==>", error));
+      .catch((error) => error);
   }, [needState, selectedCollection]);
 
   // GET CATEGORY API-3
@@ -75,7 +75,7 @@ export default function Content(props) {
       )
       .then((response) => response)
       .then((result) => setGetCategory(result.data.value))
-      .catch((error) => console.log("error==>", error));
+      .catch((error) => error);
   }, [group, needState, selectedCollection]);
 
   // GET CAT PB API-4
@@ -86,7 +86,7 @@ export default function Content(props) {
       )
       .then((response) => response)
       .then((result) => setGetCatPB(result.data.value))
-      .catch((error) => console.log("error==>", error));
+      .catch((error) => error);
   }, [category, group, needState, selectedCollection]);
 
   // GET DESIRED LENGTH API-5
