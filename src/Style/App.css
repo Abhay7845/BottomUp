@@ -63,7 +63,7 @@
   width: 100%;
   justify-content: center;
   align-items: center;
-  background: #F0e9e9;
+  background: #f2e9e9;
   position: sticky;
 }
 
@@ -94,7 +94,6 @@ td {
   margin-right: 10px;
   height: 100%;
   position: fixed;
-  z-index: 1;
   left: 0;
   display: flex;
   background: #f2e9e9;
