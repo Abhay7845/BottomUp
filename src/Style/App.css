@@ -16,7 +16,6 @@
   margin-top: 30px;
 }
 
-
 @media screen and (max-width:500px) {
   .content {
     display: flex;
@@ -59,57 +58,6 @@
   }
 }
 
-#label-file-upload.drag-active {
-  background-color: #b92121;
-}
-
-.upload-button {
-  cursor: pointer;
-  padding: 0.25rem;
-  font-size: 1rem;
-  border: none;
-  font-family: 'Oswald', sans-serif;
-  background-color: transparent;
-}
-
-.upload-button:hover {
-  text-decoration-line: underline;
-}
-
-#drag-file-element {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-}
-
-
-
-
-.line {
-  margin-right: 16px;
-  margin-left: 20px;
-  float: left;
-  flex-direction: row;
-  margin-top: 20px;
-  text-align: center;
-}
-
-.clear {
-  clear: both;
-}
-
-.column {
-  float: left;
-  flex-direction: row;
-  width: 25%;
-  padding: 70px;
-  margin-top: 60px;
-
-}
-
-
 .header {
   top: 0;
   width: 100%;
@@ -130,7 +78,6 @@
   row-gap: 35px;
 }
 
-
 th {
   font-size: 14px;
   font-family: 'Nunito Sans';
@@ -140,7 +87,6 @@ th {
 td {
   font-size: 13px;
 }
-
 
 /* The sidebar menu */
 .sideBar {
