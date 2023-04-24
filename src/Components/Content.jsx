@@ -319,7 +319,7 @@ export default function Content(props) {
           }}
           onClick={handleAddFormSubmit}
         >
-          SUBMIT
+          ADD DESIGN
         </Button>
       </div>
       <div className="table table-responsive">
