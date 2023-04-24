@@ -158,28 +158,28 @@ export default function Content(props) {
   };
   const handleAddFormSubmit = () => {
     if (addFormData.Collection === "") {
-      alert("Collection is Required");
+      alert("Please Select Collection");
       return;
     } else if (addFormData.getNeedState === "") {
-      alert("NeedState is Required");
+      alert("Please Select NeedState");
       return;
     } else if (addFormData.group === "") {
-      alert("Group is Required");
+      alert("Please Select Group");
       return;
     } else if (addFormData.Category === "") {
-      alert("Category is Required");
+      alert("Please Select Category");
       return;
     } else if (addFormData.CatPB === "") {
-      alert("CatPB is Required");
+      alert("Please Select CatPB");
       return;
     } else if (addFormData.DesiredLength === "") {
-      alert("Desired Length is Required");
+      alert("Please Select Desired");
       return;
     } else if (addFormData.RequiredWeight === "") {
-      alert("Desired Length is Required");
+      alert("Please Enter Weight");
       return;
     } else if (addFormData.concept === "") {
-      alert("Concent is Required");
+      alert("Please Enter Concent");
       return;
     }
     const incrementCounter = () => setCounter(counter + 1);
@@ -286,7 +286,7 @@ export default function Content(props) {
           name="DesiredLength"
         />
         <TextFieldOfMUI
-          label="Required Weight"
+          label="Weight"
           type="text"
           value={reqWeight}
           textFieldHandlerChange={handleWeight}

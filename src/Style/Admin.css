@@ -7,6 +7,14 @@
     width: 100%;
 }
 
+.CCInput {
+    outline: none;
+    padding: 15px;
+    border: 1.3px solid #e1dede;
+    border-radius: 5px;
+    width: 100%;
+}
+
 @media screen and (max-width:768px) {
     .CInput {
         margin-top: 15px;
