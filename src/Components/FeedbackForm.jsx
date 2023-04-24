@@ -10,10 +10,8 @@ export default function FirstPage(props) {
   const region = localStorage.getItem("region");
   const rsoName = localStorage.getItem("rsoName");
   return (
-    <div className="App">
-      <div className="header">
-        <Header />
-      </div>
+    <>
+      <Header />
       <Sidebar />
       <div className="main">
         <Content
@@ -23,6 +21,6 @@ export default function FirstPage(props) {
           showAlert={showAlert}
         />
       </div>
-    </div>
+    </>
   );
 }
