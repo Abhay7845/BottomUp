@@ -32,6 +32,7 @@ export default function Login(props) {
         console.log("response==>", response);
         localStorage.setItem("btqId", response.data.value.userName);
         localStorage.setItem("region", response.data.value.region);
+        localStorage.setItem("UserRole", response.data.value.role);
         if (response.data.value.role === "RSO") {
           navigate("/bottom/up/feedback/form");
           showAlert("Logged in Successfully", "success");

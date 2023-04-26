@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../../Style/Title.css";
 import logo from "../../../src/Asset/Img/tanishq.svg";
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
+import { useNavigate } from "react-router-dom";
 
 export default function Header() {
+  let navigate = useNavigate();
+  const UserRole = localStorage.getItem("UserRole").toLocaleUpperCase();
+  const removeUserRole = () => {
+    localStorage.removeItem("UserRole");
+    navigate("/Bottom_Up");
+  };
+  useEffect(() => {}, [UserRole]);
   return (
     <>
       <nav className="navbar top_header">
@@ -12,6 +21,14 @@ export default function Header() {
           </span>
           <div className="Top_heading mx-3">
             TANISHQ BOTTOM-UP FEEDBACK FORM
+            <b className="mx-3">
+              {UserRole}
+              <ExitToAppIcon
+                size={15}
+                className="LogoutButton"
+                onClick={removeUserRole}
+              />
+            </b>
           </div>
         </div>
       </nav>

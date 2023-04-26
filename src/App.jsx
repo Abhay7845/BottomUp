@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import FirstPage from "./Components/FeedbackForm";
 import Alert from "./Components/Common/Alert";
 import { Admin } from "./Components/Admin";
+import PrivateComponent from "./Components/Common/PrivateComponent";
 
 const App = () => {
   const [alert, setAlert] = useState(null);
@@ -27,14 +28,16 @@ const App = () => {
             path="/Bottom_Up"
             element={<Login showAlert={showAlert} />}
           />
-          <Route
-            path="/bottom/up/feedback/form"
-            element={<FirstPage showAlert={showAlert} />}
-          />
-          <Route
-            path="/bottom/up/admin"
-            element={<Admin showAlert={showAlert} />}
-          />
+          <Route element={<PrivateComponent />}>
+            <Route
+              path="/bottom/up/feedback/form"
+              element={<FirstPage showAlert={showAlert} />}
+            />
+            <Route
+              path="/bottom/up/admin"
+              element={<Admin showAlert={showAlert} />}
+            />
+          </Route>
         </Routes>
       </BrowserRouter>
     </>

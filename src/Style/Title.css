@@ -1,3 +1,13 @@
+.LogoutButton {
+  margin-top: -3px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.LogoutButton:hover {
+  color: #e3a6a6;
+}
+
 .LoginPage {
   border-radius: 2px;
   width: 400px;
