@@ -324,7 +324,7 @@ export default function Content(props) {
       </div>
       <div className="table table-responsive">
         <table
-          className="table table-bordered"
+          className="table table-bordered text-center"
           style={{ border: "1px solid black" }}
         >
           <thead>

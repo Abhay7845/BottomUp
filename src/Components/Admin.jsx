@@ -1,23 +1,43 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "./Common/Header";
 import "../Style/Admin.css";
 import { Field, Form, Formik } from "formik";
 import { AdminInitialValue, AdminSchema } from "../Schema/AdminSchem";
 import ShowError from "../Schema/ShowError";
 import { BsCheckCircleFill, BsXCircleFill } from "react-icons/bs";
-import { NeedSateValues, ReportHeaders } from "../Data/DataList";
+import { ReportHeaders } from "../Data/DataList";
 import TablePagination from "@mui/material/TablePagination";
 import ReactHTMLTableToExcel from "react-html-table-to-excel";
 import axios from "axios";
 import moment from "moment";
+import { APIHostList } from "../API/APIList";
 
 export const Admin = (props) => {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(50);
   const [ReportsData, setReportsData] = useState([]);
+  const [NeedState, setNeedState] = useState([]);
   const [loading, setLoading] = useState(false);
   const { showAlert } = props;
 
+  useEffect(() => {
+    axios
+      .get(APIHostList.AdminNeedState)
+      .then((res) => res)
+      .then((response) => {
+        if (response.data.Code === "1000") {
+          setNeedState(response.data.value);
+        }
+      })
+      .catch((error) => console.log("error==>", error));
+  }, []);
+
+  const NeedSateValues = NeedState.map((element) => {
+    return {
+      value: element,
+      label: element,
+    };
+  });
   const OnGenerateReports = (payload) => {
     setLoading(true);
     const { needState, fromDate, toDate } = payload;
@@ -71,7 +91,7 @@ export const Admin = (props) => {
               {NeedSateValues.map((item, i) => {
                 return (
                   <option key={i} value={item.value}>
-                    {item.name}
+                    {item.label}
                   </option>
                 );
               })}

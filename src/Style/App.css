@@ -72,13 +72,13 @@
 }
 
 th {
-  font-size: 14px;
+  font-size: 12px;
   font-family: 'Nunito Sans';
   background: linear-gradient(0deg, #FBE9E0 0%, rgba(251, 232, 223, 0.99625) 0.01%, rgba(255, 195, 165, 0.64) 100%);
 }
 
 td {
-  font-size: 13px;
+  font-size: 11px;
 }
 
 /* The sidebar menu */

@@ -27,12 +27,6 @@ export const alphabet = [
   "Z",
 ];
 
-export const NeedSateValues = [
-  { value: "ENGAGEMENT", name: "ENGAGEMENT" },
-  { value: "EVERYDAYS", name: "EVERYDAYS" },
-  { value: "FAITH & BELIEF", name: "FAITH & BELIEF" },
-  { value: "WEDDING", name: "WEDDING" },
-];
 export const ReportHeaders = [
   {
     Headers: "Date",
@@ -117,56 +111,5 @@ export const FeedBackReportsHeaders = [
   },
   {
     Headers: "Action",
-  },
-];
-
-export const ReportsData = [
-  {
-    date: "18/04/2023",
-    name: "Mark",
-  },
-  {
-    date: "18/04/2023",
-    name: "Mark",
-  },
-  {
-    date: "18/04/2023",
-    name: "Mark",
-  },
-  {
-    date: "18/04/2023",
-    name: "Mark",
-  },
-  {
-    date: "18/04/2023",
-    name: "Mark",
-  },
-  {
-    date: "18/04/2023",
-    name: "Mark",
-  },
-  {
-    date: "18/04/2023",
-    name: "Mark",
-  },
-  {
-    date: "18/04/2023",
-    name: "Mark",
-  },
-  {
-    date: "18/04/2023",
-    name: "Mark",
-  },
-  {
-    date: "18/04/2023",
-    name: "Mark",
-  },
-  {
-    date: "18/04/2023",
-    name: "Mark",
-  },
-  {
-    date: "18/04/2023",
-    name: "Mark",
   },
 ];
