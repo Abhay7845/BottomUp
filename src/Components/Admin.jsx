@@ -5,18 +5,37 @@ import { Field, Form, Formik } from "formik";
 import { AdminInitialValue, AdminSchema } from "../Schema/AdminSchem";
 import ShowError from "../Schema/ShowError";
 import { BsCheckCircleFill, BsXCircleFill } from "react-icons/bs";
-import { NeedSateValues, ReportHeaders, ReportsData } from "../Data/DataList";
+import { NeedSateValues, ReportHeaders } from "../Data/DataList";
 import TablePagination from "@mui/material/TablePagination";
 import ReactHTMLTableToExcel from "react-html-table-to-excel";
+import axios from "axios";
 
-export const Admin = () => {
+export const Admin = (props) => {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(50);
+  const [ReportsData, setReportsData] = useState([]);
   const [loading, setLoading] = useState(false);
+  const { showAlert } = props;
 
   const OnGenerateReports = (payload) => {
-    console.log("payload==>", payload);
     setLoading(true);
+    const { needState, fromDate, toDate } = payload;
+    axios
+      .get(
+        `https://tanishqdigitalnpim.titan.in:8443/bottomUp/BottomUp/admin/report/${needState}/${fromDate}/${toDate}`
+      )
+      .then((res) => res)
+      .then((response) => {
+        if (response.data.code === "1000") {
+          setReportsData(response.data.value);
+          showAlert("Data Fetched Successfully", "success");
+        }
+        if (response.data.code === "1001") {
+          showAlert("Data Not Available", "danger");
+        }
+        setLoading(false);
+      })
+      .catch((error) => console.log("error==>", error));
   };
 
   const handleChangePage = (event, newPage) => {
@@ -109,24 +128,27 @@ export const Admin = () => {
                 return (
                   <tr key={i}>
                     <td>{item.date}</td>
-                    <td>{item.name}</td>
-                    <td>{item.name}</td>
-                    <td>{item.name}</td>
-                    <td>{item.name}</td>
-                    <td>{item.name}</td>
-                    <td>{item.name}</td>
-                    <td>{item.name}</td>
-                    <td>{item.name}</td>
-                    <td>{item.name}</td>
-                    <td>{item.name}</td>
-                    <td>{item.name}</td>
-                    <td>{item.name}</td>
-                    <td>{item.name}</td>
+                    <td>{item.btqCode}</td>
+                    <td>{item.rsoName}</td>
+                    <td>{item.collection}</td>
+                    <td>{item.needState}</td>
+                    <td>{item.group}</td>
+                    <td>{item.category}</td>
+                    <td>{item.catPB}</td>
+                    <td>{item.lenghtSize}</td>
+                    <td>{item.requiredWeight}</td>
+                    <td>{item.range}</td>
+                    <td>{item.concept}</td>
+                    <td>{item.region}</td>
+                    <td>{item.url}</td>
                     <td className="ActionStyle">
-                      <BsCheckCircleFill size={17} className="text-success" />
-                      <BsXCircleFill size={17} className="text-danger" />
+                      {item.action === "Accepted" ? (
+                        <BsCheckCircleFill size={17} className="text-success" />
+                      ) : (
+                        <BsXCircleFill size={17} className="text-danger" />
+                      )}
                     </td>
-                    <td>{item.name}</td>
+                    <td>{item.remark}</td>
                   </tr>
                 );
               })}

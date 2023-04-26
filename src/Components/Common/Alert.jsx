@@ -5,7 +5,7 @@ const Alert = (props) => {
     if (word === "danger") {
       word = "Sorry";
     } else if (word === "success") {
-      word = "Congratulations";
+      word = "OK";
     }
     const lower = word.toLowerCase();
     return lower.charAt(0).toUpperCase() + lower.slice(1);

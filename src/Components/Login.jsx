@@ -29,7 +29,6 @@ export default function Login(props) {
         inputData
       )
       .then((response) => {
-        console.log("response==>", response);
         localStorage.setItem("btqId", response.data.value.userName);
         localStorage.setItem("region", response.data.value.region);
         localStorage.setItem("UserRole", response.data.value.role);
