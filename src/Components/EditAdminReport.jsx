@@ -1,13 +1,16 @@
 import React from "react";
 import Header from "./Common/Header";
 import { Link } from "react-router-dom";
+import { ALPHABET } from "../Data/DataList";
 
 export const EditAdminReport = () => {
   return (
     <>
       <Header />
       <form className="row mx-0">
-        <h5 className="text-center my-3">UPDATE YOUR DETAILS</h5>
+        <h5 className="text-center my-3" style={{ color: "#a54648" }}>
+          UPDATE YOUR DETAILS
+        </h5>
         <div className="col-md-3 my-2">
           <label>DATE</label>
           <input type="Date" className="CCInput" />
@@ -46,11 +49,16 @@ export const EditAdminReport = () => {
         </div>
         <div className="col-md-3 my-2">
           <label>REQUIRED WEIGHT</label>
-          <input
-            type="text"
-            className="CCInput"
-            placeholder="REQUIRED WEIGHT"
-          />
+          <select className="CSelect">
+            <option value="">SELECT</option>
+            {ALPHABET.map((item, i) => {
+              return (
+                <option key={i} value={item.value}>
+                  {item.label}
+                </option>
+              );
+            })}
+          </select>
         </div>
         <div className="col-md-3 my-2">
           <label>RANGE</label>

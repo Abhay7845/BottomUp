@@ -89,8 +89,6 @@ export default function Content(props) {
       .catch((error) => error);
   }, [category, group, needState, selectedCollection]);
 
-  // GET DESIRED LENGTH API-5
-
   function addChange(e) {
     setRange(range);
     const name = e.target.name;

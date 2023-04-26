@@ -27,6 +27,13 @@ export const alphabet = [
   "Z",
 ];
 
+export const ALPHABET = alphabet.map((element) => {
+  return {
+    value: element,
+    label: element,
+  };
+});
+
 export const ReportHeaders = [
   {
     Headers: "DATE",
