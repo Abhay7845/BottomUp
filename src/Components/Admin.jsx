@@ -11,6 +11,8 @@ import ReactHTMLTableToExcel from "react-html-table-to-excel";
 import axios from "axios";
 import moment from "moment";
 import { APIHostList } from "../API/APIList";
+import * as Icon from "react-bootstrap-icons";
+import { Link } from "react-router-dom";
 
 export const Admin = (props) => {
   const [page, setPage] = useState(0);
@@ -164,7 +166,18 @@ export const Admin = (props) => {
                     <td>{item.url}</td>
                     <td className="ActionStyle">
                       {item.action === "Accepted" ? (
-                        <BsCheckCircleFill size={17} className="text-success" />
+                        <div>
+                          <BsCheckCircleFill
+                            size={17}
+                            className="text-success"
+                          />
+                          <Link to={`/bottom/up/admin/edit/${item.btqId}`}>
+                            <Icon.PencilSquare
+                              className="mx-2 my-1"
+                              size={17}
+                            />
+                          </Link>
+                        </div>
                       ) : (
                         <BsXCircleFill size={17} className="text-danger" />
                       )}
