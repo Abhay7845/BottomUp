@@ -166,21 +166,13 @@ export const Admin = (props) => {
                     <td>{item.url}</td>
                     <td className="ActionStyle">
                       {item.action === "Accepted" ? (
-                        <div>
-                          <BsCheckCircleFill
-                            size={17}
-                            className="text-success"
-                          />
-                          <Link to={`/bottom/up/admin/edit/${item.btqId}`}>
-                            <Icon.PencilSquare
-                              className="mx-2 my-1"
-                              size={17}
-                            />
-                          </Link>
-                        </div>
+                        <BsCheckCircleFill size={17} className="text-success" />
                       ) : (
                         <BsXCircleFill size={17} className="text-danger" />
                       )}
+                      <Link to={`/bottom/up/admin/edit/${item.btqId}`}>
+                        <Icon.PencilSquare className="mx-2" size={17} />
+                      </Link>
                     </td>
                     <td>{item.remark}</td>
                   </tr>

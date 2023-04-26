@@ -29,52 +29,52 @@ export const alphabet = [
 
 export const ReportHeaders = [
   {
-    Headers: "Date",
+    Headers: "DATE",
   },
   {
-    Headers: "BTQCode",
+    Headers: "BTQ CODE",
   },
   {
-    Headers: "RSOName",
+    Headers: "RSO NAME",
   },
   {
-    Headers: "Collection",
+    Headers: "COLLECTION",
   },
   {
-    Headers: "NeedState",
+    Headers: "NEED STATE",
   },
   {
-    Headers: "Group",
+    Headers: "GROUP",
   },
   {
-    Headers: "Category",
+    Headers: "CATEGORY",
   },
   {
-    Headers: "CatPB",
+    Headers: "CAT PB",
   },
   {
-    Headers: "LengthSize",
+    Headers: "LENGTH SIZE",
   },
   {
-    Headers: "RequiredWeight",
+    Headers: "REQUIRED WEIGHT",
   },
   {
-    Headers: "Range",
+    Headers: "RANGE",
   },
   {
-    Headers: "Concept",
+    Headers: "CONCEPT",
   },
   {
-    Headers: "Region",
+    Headers: "REGION",
   },
   {
     Headers: "URL",
   },
   {
-    Headers: "Action",
+    Headers: "ACTION",
   },
   {
-    Headers: "Remarks",
+    Headers: "REMARK",
   },
 ];
 
