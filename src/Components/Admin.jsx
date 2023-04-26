@@ -31,7 +31,7 @@ export const Admin = (props) => {
           showAlert("Data Fetched Successfully", "success");
         }
         if (response.data.code === "1001") {
-          showAlert("Data Not Available", "danger");
+          showAlert("Data Not Found", "danger");
         }
         setLoading(false);
       })
@@ -109,7 +109,7 @@ export const Admin = (props) => {
       {ReportsData.length > 0 && (
         <div className="table table-responsive p-1">
           <table
-            className="table table-bordered"
+            className="table table-bordered text-center"
             id="table-to-xls"
             style={{ border: "1px solid black" }}
           >
