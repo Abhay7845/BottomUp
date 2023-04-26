@@ -15,7 +15,7 @@ function TextFieldOfMUI(props) {
         placeholder={label}
         type={type}
         onChange={textFieldHandlerChange}
-        value={value}
+        defaultValue={value}
         name={name}
         className="CCInput"
       />
