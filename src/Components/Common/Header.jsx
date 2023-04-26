@@ -20,7 +20,7 @@ export default function Header() {
             <img src={logo} alt="Logo" className="Logo" />
           </span>
           <div className="Top_heading mx-3">
-            TANISHQ BOTTOM-UP FEEDBACK FORM
+            {UserRole === "ADMIN" ? "" : "TANISHQ BOTTOM-UP FEEDBACK FORM"}
           </div>
           <b style={{ color: "#832729" }}>
             {UserRole}
