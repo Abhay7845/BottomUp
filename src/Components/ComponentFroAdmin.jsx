@@ -1,12 +1,11 @@
 import React from "react";
-import { FormControl } from "@material-ui/core";
 import "../Style/App.css";
 
 function TextFieldOfMUI(props) {
   const { label, type, textFieldHandlerChange, value, name } = props;
 
   return (
-    <FormControl>
+    <div className="w-100">
       <label>
         {label}
         <span className="text-danger"> *</span>
@@ -19,7 +18,7 @@ function TextFieldOfMUI(props) {
         name={name}
         className="CCInput"
       />
-    </FormControl>
+    </div>
   );
 }
 
@@ -35,7 +34,7 @@ const SelectOfMUI = (props) => {
 
   return (
     <>
-      <FormControl>
+      <div className="w-100">
         <label>
           {placeholder}
           <span className="text-danger"> *</span>
@@ -57,7 +56,7 @@ const SelectOfMUI = (props) => {
             );
           })}
         </select>
-      </FormControl>
+      </div>
     </>
   );
 };

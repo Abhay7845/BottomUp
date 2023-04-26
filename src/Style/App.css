@@ -108,6 +108,12 @@ td {
   }
 }
 
+@media screen and (max-width:464px) {
+  .sideBar {
+    padding-top: 19%;
+  }
+}
+
 .main {
   overflow-x: hidden;
   margin-left: 250px;
