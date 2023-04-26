@@ -9,6 +9,7 @@ import { NeedSateValues, ReportHeaders } from "../Data/DataList";
 import TablePagination from "@mui/material/TablePagination";
 import ReactHTMLTableToExcel from "react-html-table-to-excel";
 import axios from "axios";
+import moment from "moment";
 
 export const Admin = (props) => {
   const [page, setPage] = useState(0);
@@ -127,7 +128,7 @@ export const Admin = (props) => {
               ).map((item, i) => {
                 return (
                   <tr key={i}>
-                    <td>{item.date}</td>
+                    <td>{moment(item.date).format("DD/MM/YYYY")}</td>
                     <td>{item.btqCode}</td>
                     <td>{item.rsoName}</td>
                     <td>{item.collection}</td>
