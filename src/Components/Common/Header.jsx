@@ -22,7 +22,7 @@ export default function Header() {
           <div className="Top_heading mx-3">
             TANISHQ BOTTOM-UP FEEDBACK FORM
           </div>
-          <b className="mx-3">
+          <b style={{ color: "#832729" }}>
             {UserRole}
             <ExitToAppIcon
               size={15}
