@@ -152,7 +152,7 @@ export const Admin = (props) => {
                   <tr key={i}>
                     <td>{moment(item.date).format("DD/MM/YYYY")}</td>
                     <td>{item.btqCode}</td>
-                    <td>{item.rsoName}</td>
+                    <td>{item.rsoName.toUpperCase()}</td>
                     <td>{item.collection}</td>
                     <td>{item.needState}</td>
                     <td>{item.group}</td>
@@ -161,8 +161,8 @@ export const Admin = (props) => {
                     <td>{item.lenghtSize}</td>
                     <td>{item.requiredWeight}</td>
                     <td>{item.range}</td>
-                    <td>{item.concept}</td>
-                    <td>{item.region}</td>
+                    <td>{item.concept.toUpperCase()}</td>
+                    <td>{item.region.toUpperCase()}</td>
                     <td>{item.url}</td>
                     <td className="ActionStyle">
                       {item.action === "Accepted" ? (
@@ -174,7 +174,7 @@ export const Admin = (props) => {
                         <Icon.PencilSquare className="mx-2" size={17} />
                       </Link>
                     </td>
-                    <td>{item.remark}</td>
+                    <td>{item.remark.toUpperCase()}</td>
                   </tr>
                 );
               })}
