@@ -21,15 +21,15 @@ export default function Header() {
           </span>
           <div className="Top_heading mx-3">
             TANISHQ BOTTOM-UP FEEDBACK FORM
-            <b className="mx-3">
-              {UserRole}
-              <ExitToAppIcon
-                size={15}
-                className="LogoutButton"
-                onClick={removeUserRole}
-              />
-            </b>
           </div>
+          <b className="mx-3">
+            {UserRole}
+            <ExitToAppIcon
+              size={15}
+              className="LogoutButton"
+              onClick={removeUserRole}
+            />
+          </b>
         </div>
       </nav>
     </>

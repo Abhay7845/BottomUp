@@ -3,9 +3,9 @@
   font-weight: bold
 }
 
-@media screen and (max-width:500px) {
+@media screen and (max-width:558px) {
   .Top_heading {
-    font-size: 12px;
+    display: none;
   }
 }
 
