@@ -328,7 +328,7 @@ export default function Content(props) {
           <thead>
             <tr>
               {FeedBackReportsHeaders.map((item, i) => {
-                return <th key={i}>{item.Headers}</th>;
+                return <th key={i}>{item.Headers.toLocaleUpperCase()}</th>;
               })}
             </tr>
           </thead>
