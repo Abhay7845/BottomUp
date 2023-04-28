@@ -7,13 +7,13 @@ export const EditAdminReport = () => {
   return (
     <>
       <Header />
-      <form className="row mx-0">
+      <div className="row mx-0">
         <h5 className="text-center my-3" style={{ color: "#a54648" }}>
           UPDATE YOUR DETAILS
         </h5>
         <div className="col-md-3 my-2">
           <label>DATE</label>
-          <input type="Date" className="CCInput" />
+          <input type="Date" className="CCInput" defaultValue={"2023-04-12"} />
         </div>
         <div className="col-md-3 my-2">
           <label>BTQ CODE</label>
@@ -88,7 +88,7 @@ export const EditAdminReport = () => {
             UPDATE
           </button>
         </div>
-      </form>
+      </div>
     </>
   );
 };
