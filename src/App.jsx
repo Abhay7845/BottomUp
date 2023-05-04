@@ -6,7 +6,6 @@ import FirstPage from "./Components/FeedbackForm";
 import Alert from "./Components/Common/Alert";
 import { Admin } from "./Components/Admin";
 import PrivateComponent from "./Components/Common/PrivateComponent";
-import { EditAdminReport } from "./Components/EditAdminReport";
 
 const App = () => {
   const [alert, setAlert] = useState(null);
@@ -37,10 +36,6 @@ const App = () => {
             <Route
               path="/bottom/up/admin"
               element={<Admin showAlert={showAlert} />}
-            />
-            <Route
-              path="/bottom/up/admin/edit/:id"
-              element={<EditAdminReport showAlert={showAlert} />}
             />
           </Route>
         </Routes>
