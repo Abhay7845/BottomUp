@@ -67,6 +67,26 @@ export const Admin = (props) => {
     setRowsPerPage(+event.target.value);
     setPage(0);
   };
+
+  const AcceptRowData = (Row) => {
+    const additionRowData = {
+      url1: "",
+      url2: "",
+      additional1: "",
+      additional2: "",
+    };
+    const tableRow = { ...Row, ...additionRowData };
+    console.log("tableRow==>", tableRow);
+
+    axios
+      .post(
+        "https://tanishqdigitalnpim.titan.in:8443/bottomUp/BottomUp/item/details/update/response",
+        tableRow
+      )
+      .then((res) => res)
+      .then((response) => console.log("response==>", response))
+      .catch((error) => console.log("error=>", error));
+  };
   return (
     <>
       <div className="header">
@@ -163,8 +183,17 @@ export const Admin = (props) => {
                     <td>{item.region.toUpperCase()}</td>
                     <td>{item.url}</td>
                     <td className="ActionStyle">
-                      <BsCheckCircleFill size={17} className="text-success" />
-                      <BsXCircleFill size={17} className="text-danger" />
+                      <BsCheckCircleFill
+                        size={17}
+                        className="text-success"
+                        cursor="pointer"
+                        onClick={() => AcceptRowData(item)}
+                      />
+                      <BsXCircleFill
+                        size={17}
+                        className="text-danger"
+                        cursor="pointer"
+                      />
                     </td>
                     <td>{item.remark.toUpperCase()}</td>
                   </tr>
