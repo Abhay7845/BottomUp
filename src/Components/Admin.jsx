@@ -14,13 +14,14 @@ import { APIHostList } from "../API/APIList";
 import Loader from "./Common/Loader";
 
 export const Admin = (props) => {
+  const { showAlert } = props;
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(50);
   const [ReportsData, setReportsData] = useState([]);
   const [NeedState, setNeedState] = useState([]);
   const [loading, setLoading] = useState(false);
   const [circleLoading, setLoadingCircle] = useState(false);
-  const { showAlert } = props;
+  const [updatedValue, setUpdatedValue] = useState({});
 
   useEffect(() => {
     axios
@@ -87,11 +88,15 @@ export const Admin = (props) => {
       )
       .then((res) => res)
       .then((response) => {
-        console.log("response==>", response);
-        setLoadingCircle(false);
+        if (response.data.Code === "1000") {
+          setUpdatedValue(response.data);
+          showAlert("Action has been Completed", "success");
+          setLoadingCircle(false);
+        }
       })
       .catch((error) => console.log("error=>", error));
   };
+  console.log("updatedValue==>", updatedValue);
   return (
     <>
       <div className="header">
@@ -155,6 +160,7 @@ export const Admin = (props) => {
       </Formik>
       {ReportsData.length > 0 && (
         <div className="table table-responsive p-1">
+          <b className="mx-1">Total Success Count: {ReportsData.length}</b>
           <table
             className="table table-bordered text-center"
             id="table-to-xls"
