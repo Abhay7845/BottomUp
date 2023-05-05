@@ -11,6 +11,7 @@ import ReactHTMLTableToExcel from "react-html-table-to-excel";
 import axios from "axios";
 import moment from "moment";
 import { APIHostList } from "../API/APIList";
+import Loader from "./Common/Loader";
 
 export const Admin = (props) => {
   const [page, setPage] = useState(0);
@@ -18,6 +19,7 @@ export const Admin = (props) => {
   const [ReportsData, setReportsData] = useState([]);
   const [NeedState, setNeedState] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [circleLoading, setLoadingCircle] = useState(false);
   const { showAlert } = props;
 
   useEffect(() => {
@@ -69,6 +71,7 @@ export const Admin = (props) => {
   };
 
   const AcceptRowData = (Row) => {
+    setLoadingCircle(true);
     const additionRowData = {
       url1: "",
       url2: "",
@@ -77,14 +80,16 @@ export const Admin = (props) => {
     };
     const tableRow = { ...Row, ...additionRowData };
     console.log("tableRow==>", tableRow);
-
     axios
       .post(
         "https://tanishqdigitalnpim.titan.in:8443/bottomUp/BottomUp/item/details/update/response",
         tableRow
       )
       .then((res) => res)
-      .then((response) => console.log("response==>", response))
+      .then((response) => {
+        console.log("response==>", response);
+        setLoadingCircle(false);
+      })
       .catch((error) => console.log("error=>", error));
   };
   return (
@@ -92,6 +97,7 @@ export const Admin = (props) => {
       <div className="header">
         <Header />
       </div>
+      {circleLoading === true ? <Loader /> : ""}
       <br />
       <Formik
         initialValues={AdminInitialValue}
