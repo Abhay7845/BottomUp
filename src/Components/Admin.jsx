@@ -176,8 +176,8 @@ export const Admin = (props) => {
                     <td>{item.group}</td>
                     <td>{item.category}</td>
                     <td>{item.catPB}</td>
-                    <td>{item.lenghtSize}</td>
-                    <td>{item.requiredWeight}</td>
+                    <td>{item.lengthSize}</td>
+                    <td>{item.reqWeight}</td>
                     <td>{item.range}</td>
                     <td>{item.concept.toUpperCase()}</td>
                     <td>{item.region.toUpperCase()}</td>
@@ -201,7 +201,7 @@ export const Admin = (props) => {
               })}
             </tbody>
           </table>
-          <div className="d-flex justify-content-end my-2">
+          <div className="d-flex justify-content-end my-2 w-100">
             <ReactHTMLTableToExcel
               id="test-table-xls-button"
               className="excelButton"
